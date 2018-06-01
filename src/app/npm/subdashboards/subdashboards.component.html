@@ -1,0 +1,78 @@
+<!--<div class="fixed-breadcrumb row">           
+    <a class="ee-logo"><img src="./assets/images/ee-logo.png"  alt=""></a>
+    <div class="page-title">
+    <h2>{{breadcrumbs.mainlink}}</h2>
+    <span *ngFor="let sub of breadcrumbs.sublinks;let last=last;"><span *ngIf="!last">/</span> 
+             <a *ngIf="!last else span" [routerLink]="last?'null':sub.routing">{{sub.displayName}} </a>
+             <ng-template #span>{{sub.displayName}}</ng-template> </span>  <!--<span>/</span> <a href="dashboard.html">First Dashboard</a> 
+    </div>
+    </div>-->
+    <app-breadcrumbs [breadcrumb]="breadcrumbs"></app-breadcrumbs>
+     <div class="margin-reset" *ngIf="isLoading">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+<div class="container-fluid dasboard-container">
+ 
+    <div class="row">
+      <div class="col-md-4 col-space" *ngFor="let subDashboard of subDashboards ;  let k= index;" >
+        <div class="dashboard-block" [ngClass]="{'empty' :  ( subDashboard.reports !=null && subDashboard.reports.length == 0 ) }">
+          <!-- Top heading -->
+          <div class="row">
+            <div class="col-md-12 form-top">
+              <div class="pull-left">
+                <h3 class="block-title"><a (click)="getSpecificSubDashboard(subDashboard)">{{ subDashboard.name }}</a>
+                   <span *ngIf="subDashboard.reports != null && subDashboard.reports.length > 0"> ({{ subDashboard.reports.length  }})</span></h3>
+              </div>
+
+              <div class="pull-right action-item">
+                  <div class="serach-category sm">
+                      <input type="text" class="search-query" placeholder="Search" [(ngModel)]="subDashboard.searchCG">
+                      <button type="submit" class="search-btn">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                      </button>
+                    </div>
+               
+                  <a title="View all" style="cursor:pointer;" (click)="getSpecificSubDashboard(subDashboard)" class="icon-16 viewall"></a>
+                
+                  </div>
+            </div>
+          </div>
+          <!-- // -->
+
+          <ul class="row report-icon overflow-div" [id]="'subDashboard'+k">
+            <li class="col-md-4" *ngFor="let report of subDashboard.reports | searchpipe : subDashboard.searchCG :['reportName'];" (click)="getSpecificReport(report,subDashboard)">
+              <a >
+                <img *ngIf="report.reportConfiguration.configuration.subType=='pie'" src="./assets/images/pie-chart2.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='Vertical Bar' || report.reportConfiguration.configuration.subType=='Bar'" src="./assets/images/vertical-bar.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='Spline'" src="./assets/images/spline-graph.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='donut'" src="./assets/images/donut-chart.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='Vertical Stacked Bar'" src="./assets/images/vertical-stacked-bar6.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='Horizontal Bar'" src="./assets/images/horizontal-bar4.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='line'" src="./assets/images/line-chart.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='Horizontal Stacked Bar'" src="./assets/images/horizontal-stacked-bar2.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='areaspline'" src="./assets/images/line-chart.png"  alt="">
+                  <img *ngIf="report.reportConfiguration.configuration.subType=='Table'" src="./assets/images/table-table.png"  alt="">
+              </a>
+              <span  class="lbl">{{report.reportName}}</span>
+            </li>
+      
+          </ul>
+
+          <div class="alert-box" *ngIf=" subDashboard.searchCG && subDashboard.searchCG.length > 0 && subDashboard.reports != null && subDashboard.reports.length > 0 && (subDashboard.reports | searchpipe : subDashboard.searchCG :['reportName']).length === 0 " >
+              <p class="msg"><span class="glyphicon glyphicon-search"></span><br>No reports found.</p>
+          </div>
+
+          <div class="alert-box"  [ngClass] = "{'show' : (subDashboard.reports == null || subDashboard.reports.length == 0) ,'hide': (subDashboard.reports != null && subDashboard.reports.length > 0)}">
+              <p class="msg">
+                No report is available. <br>
+              
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>

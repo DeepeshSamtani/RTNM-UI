@@ -1,0 +1,9 @@
+.overflow-div{
+    
+    overflow-y: auto; 
+    max-height: 290px; 
+
+}
+ .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+              background-color: rgb(216, 49, 129) !important;
+  }

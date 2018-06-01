@@ -1,0 +1,45 @@
+.drop-icon {
+    background: #fff9ef;
+    border: 1px dashed #ccc;
+    border-radius: 50%;
+    width: 90px;
+    height: 70px;
+    padding-top: 15px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.complete-width {
+    width:82px;
+}
+
+.form-check.disabled{
+opacity:0.5;
+cursor:not-allowed;
+}
+
+.no-image-msg .text {
+    color:#666;
+}
+
+
+.closeButton{
+    color: #d63181;
+    font: 14px/100% arial, sans-serif;
+    position: relative;
+    right: -20px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    top: -7px;
+    float: right;
+    font-weight: 600;
+    cursor:pointer;
+}
+
+.closeButton:after {
+  content: 'X'; /* ANSI X letter */
+}
+
+.border-empty{
+     border: 1px solid #d63181;
+}

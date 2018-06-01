@@ -1,0 +1,8 @@
+  <app-chart-table *ngIf="report ; else spinner" [name]="report.name" [request]="" [height]="300" [response]="report.response.graph" [showGraph]="report.response.type=='Table' ? false :true"
+        [eventData]="report.tableResponse" [menuToggle]="{toggle : menuToggled , class :'col-md-4'}" [type]="report.response.type"
+        [index]="index+''" [counterListForReport]="counterListForReport"></app-chart-table>
+          <ng-template #spinner>
+    <div style="height: 200px; margin-top: 60px;">
+      <mat-spinner style="margin:auto;" diameter=60 color="accent"></mat-spinner>
+    </div>
+  </ng-template>

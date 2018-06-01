@@ -1,0 +1,614 @@
+{
+    "reports": [
+        {
+            "userTemplateId": "XxMefU",
+            "reportConfiguration": null,
+            "metrics": null,
+            "kpiMetrics": null,
+            "response": null,
+            "userName": "ajay029",
+            "reportName": "MME new report",
+            "graphData": null,
+            "header": null
+        },
+        {
+            "userTemplateId": "sZobTg",
+            "reportConfiguration": null,
+            "metrics": null,
+            "kpiMetrics": null,
+            "response": null,
+            "userName": "ajay029",
+            "reportName": "CGP report 1",
+            "graphData": null,
+            "header": null
+        },
+        {
+            "userTemplateId": "JjdSCW",
+            "reportConfiguration": null,
+            "metrics": null,
+            "kpiMetrics": null,
+            "response": null,
+            "userName": "ajay029",
+            "reportName": "CG report 1",
+            "graphData": null,
+            "header": null
+        }
+    ],
+    "dashboards": null,
+    "profileResponse": {
+        "profileId": 1,
+        "profileName": "Admin User",
+        "communityString": "adminuser",
+        "dataAccess": "ALL",
+        "accesses": [
+            {
+                "accessId": 1,
+                "accessName": "Dashboard creation",
+                "displayName": "Dashboard"
+            },
+            {
+                "accessId": 2,
+                "accessName": "View all Reports",
+                "displayName": "My Reports"
+            },
+            {
+                "accessId": 3,
+                "accessName": "Dynamic KPI creation",
+                "displayName": "Manage KPI"
+            },
+            {
+                "accessId": 5,
+                "accessName": "Assigning dashboard to specific community",
+                "displayName": "Admin Settings"
+            }
+        ],
+        "applicableProfiles": [
+            {
+                "profileId": 2,
+                "profileName": "Power User",
+                "communityString": "poweruser",
+                "dataAccess": "ALL",
+                "accesses": [],
+                "dashboards": [],
+                "applicableProfiles": []
+            },
+            {
+                "profileId": 3,
+                "profileName": "Power User",
+                "communityString": "emobileuser",
+                "dataAccess": "Emobile",
+                "accesses": [],
+                "dashboards": [],
+                "applicableProfiles": []
+            }
+        ],
+
+         "dashboards": [{
+  "name": "Test Dashboard 1",
+  "id" : "Jfhed4",
+  "type":"common",
+  "view":"both",
+  "subDashboards": [
+  
+     {
+      "name": "Subdashboard2",
+      "reports": [
+   {
+  "userTemplateId": "sZobTg",
+  "reportConfiguration": {
+    "configuration": {
+      "attributes": null,
+      "properties": null,
+      "metrics": [
+        {
+          "id": "EPC_C_1",
+          "aggregationType": "SUM"
+        },
+        {
+          "id": "EPC_C_10",
+          "aggregationType": "SUM"
+        }
+      ],
+      "kpiMetrics": null,
+      "name": "CGP report 1",
+      "type": "Graph",
+      "subType": "Spline",
+      "deviceType": "CGP",
+      "entity": null,
+      "dimensions": [
+        {
+          "name": "MODULE",
+          "displayName": "MODULE",
+          "id": "EPC_P3"
+        },
+        {
+          "name": "CGP_NAME",
+          "displayName": "CGP_NAME",
+          "id": "EPC_P_1"
+        },
+        {
+          "name": "IP_ADDRESS",
+          "displayName": "IP_ADDRESS",
+          "id": "EPC_P_2"
+        },
+        {
+          "name": "MEID",
+          "displayName": "MEID",
+          "id": "EPC_P_4"
+        },
+        {
+          "name": null,
+          "displayName": "COUNTER_GROUP_ID",
+          "id": "COUNTER_GROUP_ID"
+        }
+      ],
+      "context": null,
+      "groupByDimensions": null
+    },
+    "filter": {
+      "condition": "AND",
+      "rules": [
+        {
+          "condition": "OR",
+          "rules": [
+            {
+              "field": "EPC_P_1",
+              "value": "MME001BKT",
+              "type": "selector"
+            },
+            {
+              "field": "EPC_P_1",
+              "value": "MME001MFD",
+              "type": "selector"
+            }
+          ]
+        },
+        {
+          "condition": "OR",
+          "rules": [
+            {
+              "field": "COUNTER_GROUP_ID",
+              "value": "EPC_CG_34",
+              "type": "selector"
+            }
+          ]
+        },
+        {
+          "condition": "OR",
+          "rules": [
+            {
+              "id": "EPC_C_1",
+              "value": "-2147483648",
+              "type": "bound"
+            },
+            {
+              "id": "EPC_C_10",
+              "value": "-2147483648",
+              "type": "bound"
+            }
+          ]
+        }
+      ]
+    },
+    "samplingPeriod": null,
+    "intervals": "Last 12 hours",
+    "pagination": {
+      "pagenumber": 1,
+      "pagesize": 10000,
+      "pagingSpec": {
+        "pagingIdentifiers": null,
+        "threshold": 10000
+      }
+    },
+    "granularity": "ALL",
+    "reportDataType": "raw",
+    "filterMap": {
+      "EPC_P_1": [
+        "MME001BKT",
+        "MME001MFD"
+      ]
+    },
+    "counterGroupsWithCounterAndProperties": [
+      {
+        "counterGroupId": "EPC_CG_34",
+        "counterGroupDetails": null,
+        "deviceType": null,
+        "neLevel": null,
+        "cgSource": null,
+        "counterList": [
+          {
+            "counterKey": {
+              "counterId": "EPC_C_1",
+              "counterGroupTrans": null
+            },
+            "counterUnit": "packet",
+            "counterDescription": null,
+            "aggregation": null,
+            "counterType": "Counter",
+            "enabled": null,
+            "cSource": null,
+            "aggregationList": [
+              "SUM"
+            ],
+            "displayName": "IP Packets Succ Received",
+            "formula": null
+          },
+          {
+            "counterKey": {
+              "counterId": "EPC_C_10",
+              "counterGroupTrans": null
+            },
+            "counterUnit": "packet",
+            "counterDescription": null,
+            "aggregation": null,
+            "counterType": "Counter",
+            "enabled": null,
+            "cSource": null,
+            "aggregationList": [
+              "SUM"
+            ],
+            "displayName": "SCTP Packets not Fwrd Succ",
+            "formula": null
+          }
+        ],
+        "properties": [
+          {
+            "propertyKey": {
+              "propertyId": "EPC_P3",
+              "counterGroups": {
+                "counterGroupId": "EPC_CG_34",
+                "counterGroupDetails": null,
+                "deviceType": null,
+                "neLevel": null,
+                "cgSource": null,
+                "counterList": null,
+                "properties": null,
+                "kpis": null,
+                "displayName": null
+              }
+            },
+            "propertyName": "MODULE",
+            "propertyValues": "null",
+            "selectedValues": []
+          },
+          {
+            "propertyKey": {
+              "propertyId": "EPC_P_1",
+              "counterGroups": {
+                "counterGroupId": "EPC_CG_34",
+                "counterGroupDetails": null,
+                "deviceType": null,
+                "neLevel": null,
+                "cgSource": null,
+                "counterList": null,
+                "properties": null,
+                "kpis": null,
+                "displayName": null
+              }
+            },
+            "propertyName": "CGP_NAME",
+            "propertyValues": "{\"values\":[\"MME001BKT\",\"MME001CRO\",\"MME001LDS\",\"MME001LTN\",\"MME001MFD\",\"MME001WVN\",\"MME002CRO\",\"MME002LDS\",\"MME002LTN\",\"MME002WVN\",\"PSHCRO1\",\"PSHKT03\",\"PSHLD02\",\"PSHLT01\",\"PSHMF01\",\"PSHWV02\",\"PSHWV03\"]}",
+            "selectedValues": [
+              "MME001BKT",
+              "MME001MFD"
+            ]
+          },
+          {
+            "propertyKey": {
+              "propertyId": "EPC_P_2",
+              "counterGroups": {
+                "counterGroupId": "EPC_CG_34",
+                "counterGroupDetails": null,
+                "deviceType": null,
+                "neLevel": null,
+                "cgSource": null,
+                "counterList": null,
+                "properties": null,
+                "kpis": null,
+                "displayName": null
+              }
+            },
+            "propertyName": "IP_ADDRESS",
+            "propertyValues": "null",
+            "selectedValues": []
+          },
+          {
+            "propertyKey": {
+              "propertyId": "EPC_P_4",
+              "counterGroups": {
+                "counterGroupId": "EPC_CG_34",
+                "counterGroupDetails": null,
+                "deviceType": null,
+                "neLevel": null,
+                "cgSource": null,
+                "counterList": null,
+                "properties": null,
+                "kpis": null,
+                "displayName": null
+              }
+            },
+            "propertyName": "MEID",
+            "propertyValues": "null",
+            "selectedValues": []
+          }
+        ],
+        "kpis": null,
+        "displayName": "HWI_CGP_IP_TRAFF"
+      }
+    ]
+  },
+  "metrics": [
+    {
+      "counterKey": {
+        "counterId": "EPC_C_1",
+        "counterGroupTrans": {
+          "counterGroupId": "EPC_CG_34",
+          "counterGroupDetails": null,
+          "deviceType": null,
+          "neLevel": null,
+          "cgSource": null,
+          "counterList": null,
+          "properties": null,
+          "kpis": null,
+          "displayName": null
+        }
+      },
+      "counterUnit": "packet",
+      "counterDescription": "Number of IP Packets Successfully Received",
+      "aggregation": {
+        "id": 4,
+        "hourSum": 1,
+        "hourMin": 0,
+        "hourMax": 0,
+        "hourAvg": 0,
+        "hourFormula": null,
+        "daySum": 1,
+        "dayMin": 0,
+        "dayMax": 0,
+        "dayAvg": 0,
+        "dayFormula": null,
+        "weekSum": 1,
+        "weekMin": 0,
+        "weekMax": 0,
+        "weekAvg": 0,
+       "weekFormula": null,
+        "monthSum": 1,
+        "monthMin": 0,
+        "monthMax": 0,
+        "monthAvg": 0,
+        "monthFormula": null,
+        "yearSum": 1,
+        "yearMin": 0,
+        "yearMax": 0,
+        "yearAvg": 0,
+        "yearFormula": null
+      },
+      "counterType": "Counter",
+      "enabled": 1,
+      "cSource": "1056974758",
+      "aggregationList": [
+        "SUM"
+      ],
+      "displayName": "IP Packets Succ Received",
+      "formula": null
+    },
+    {
+      "counterKey": {
+        "counterId": "EPC_C_10",
+        "counterGroupTrans": {
+          "counterGroupId": "EPC_CG_34",
+          "counterGroupDetails": null,
+          "deviceType": null,
+          "neLevel": null,
+          "cgSource": null,
+          "counterList": null,
+          "properties": null,
+          "kpis": null,
+          "displayName": null
+        }
+      },
+      "counterUnit": "packet",
+      "counterDescription": "Number of SCTP Packets not Forwarded Successfully",
+      "aggregation": {
+        "id": 4,
+        "hourSum": 1,
+        "hourMin": 0,
+        "hourMax": 0,
+        "hourAvg": 0,
+        "hourFormula": null,
+        "daySum": 1,
+        "dayMin": 0,
+        "dayMax": 0,
+        "dayAvg": 0,
+        "dayFormula": null,
+        "weekSum": 1,
+        "weekMin": 0,
+        "weekMax": 0,
+        "weekAvg": 0,
+        "weekFormula": null,
+        "monthSum": 1,
+        "monthMin": 0,
+        "monthMax": 0,
+        "monthAvg": 0,
+        "monthFormula": null,
+        "yearSum": 1,
+        "yearMin": 0,
+        "yearMax": 0,
+        "yearAvg": 0,
+        "yearFormula": null
+      },
+      "counterType": "Counter",
+      "enabled": 1,
+      "cSource": "1056974767",
+      "aggregationList": [
+        "SUM"
+      ],
+      "displayName": "SCTP Packets not Fwrd Succ",
+      "formula": null
+    }
+  ],
+  "kpiMetrics": null,
+  "response": null,
+  "userName": "ajay029",
+  "reportName": "CGP report 1",
+  "graphData": null,
+  "header": null
+}
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "profileId":1
+    
+    },
+    {
+      "profileId":2
+    
+    }]
+},
+
+
+{
+    "id": "Irln05",
+    "name": "Test Dashboard 2",
+    "type": "common",
+    "view": "both",
+    "subDashboards": [
+        {
+            "name": "Subdashboard2",
+            "subDashboardId": "vRPK9U",
+            "dashboardId": "Irln05",
+            "reports": [
+                {
+                    "userTemplateId": "hklbVZd",
+                    "reportConfiguration": {
+                        "configuration": {
+                            "attributes": null,
+                            "properties": null,
+                            "metrics": [
+                                {
+                                    "id": "EPC_C_1",
+                                    "aggregationType": "SUM"
+                                },
+                                {
+                                    "id": "EPC_C_10",
+                                    "aggregationType": "SUM"
+                                }
+                            ],
+                            "kpiMetrics": null,
+                            "name": "CGP report 1",
+                            "type": "Graph",
+                            "subType": "Spline",
+                            "deviceType": "CGP",
+                            "entity": null,
+                            "dimensions": [
+                                {
+                                    "name": "MODULE",
+                                    "displayName": "MODULE",
+                                   "id": "EPC_P3"
+                                },
+                                {
+                                    "name": "CGP_NAME",
+                                    "displayName": "CGP_NAME",
+                                    "id": "EPC_P_1"
+                                },
+                                {
+                                    "name": "IP_ADDRESS",
+                                    "displayName": "IP_ADDRESS",
+                                    "id": "EPC_P_2"
+                                },
+                                {
+                                    "name": "MEID",
+                                    "displayName": "MEID",
+                                    "id": "EPC_P_4"
+                                },
+                                {
+                                    "name": null,
+                                    "displayName": "COUNTER_GROUP_ID",
+                                    "id": "COUNTER_GROUP_ID"
+                                }
+                            ],
+                            "context": null,
+                            "groupByDimensions": null
+                        },
+                        "filter": {
+                            "condition": "AND",
+                            "rules": [
+                                {
+                                    "condition": "OR",
+                                    "rules": [
+                                        {
+                                            "field": "EPC_P_1",
+                                            "value": "MME001BKT",
+                                            "type": "selector"
+                                        },
+                                        {
+                                            "field": "EPC_P_1",
+                                            "value": "MME001MFD",
+                                            "type": "selector"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "condition": "OR",
+                                    "rules": [
+                                        {
+                                            "field": "COUNTER_GROUP_ID",
+                                            "value": "EPC_CG_34",
+                                            "type": "selector"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "condition": "OR",
+                                    "rules": [
+                                        {
+                                            "id": "EPC_C_1",
+                                            "value": "-2147483648",
+                                            "type": "bound"
+                                        },
+                                        {
+                                            "id": "EPC_C_10",
+                                            "value": "-2147483648",
+                                            "type": "bound"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "samplingPeriod": null,
+                        "intervals": "Last 12 hours",
+                        "pagination": {
+                            "pagenumber": 1,
+                            "pagesize": 10000,
+                            "pagingSpec": {
+                                "pagingIdentifiers": null,
+                                "threshold": 10000
+                            }
+                        },
+                        "granularity": "ALL",
+                        "reportDataType": "raw",
+                        "filterMap": {
+                            "EPC_P_1": [
+                                "MME001BKT",
+                                "MME001MFD"
+                            ]
+                        },
+                        "counterGroupsWithCounterAndProperties": null
+                    },
+                    "metrics": null,
+                    "kpiMetrics": null,
+                    "response": null,
+                    "userName": null,
+                    "reportName": "CGP report 1",
+                    "graphData": null,
+                    "header": null
+                }
+            ]
+        }
+    ]
+}
+]
+    }
+}

@@ -1,0 +1,45 @@
+.hide{
+    display:none;
+}
+
+.disabled{
+    pointer-events: none;
+    opacity :0.4;
+}
+
+.has-enabled-counters{
+    background-color: #ffffff;
+    color: #d63181;
+}
+
+.has-enabled-kpis{
+    background-color: #ffffff;
+    color: #d63181;
+}
+
+.dropdown-overflow-popup{
+    overflow-y:auto;
+    overflow-x: hidden;
+}
+
+.mar-bottom-20{
+    margin-bottom: 20px;
+}
+.adj-space{
+    margin-top:10px;
+}
+
+virtual-scroll{
+    height:340px;
+}
+
+.no-counters{
+  text-align: center;
+    margin-top: 20px;
+    margin-left: 30px;
+    padding: 15px;
+    border: 1px dotted #d63181;
+    color: #337ab7;
+    opacity: 0.7;
+}
+

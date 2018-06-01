@@ -1,0 +1,55 @@
+{
+                    "userTemplateId": "tft768",
+                    "reportConfiguration": {
+                        "configuration": {
+                            "attributes": null,
+                            "properties": null,
+                            "metrics": [
+                                {
+                                    "id": "117490514"
+                                },
+                                {
+                                    "id": "117490515"
+                                },
+                                {
+                                    "id": "117490519"
+                                }
+                            ],
+                            "kpiMetrics": null,
+                            "name": "MME Report 1",
+                            "type": "Graph",
+                            "subType": "line",
+                            "deviceType": "MME",
+                            "entity": null,
+                            "dimensions": [
+                                {
+                                    "name": "NodeName",
+                                    "displayName": "NodeName",
+                                    "id": "NodeName"
+                                }
+                            ],
+                            "context": null
+                        },
+                        "filter": null,
+                        "samplingPeriod": null,
+                        "intervals": "last 1 month",
+                        "pagination": {
+                            "pagenumber": 1,
+                            "pagesize": 10000,
+                            "pagingSpec": null
+                        },
+                        "granularity": "HOURLY",
+                        "reportDataType": "grouped",
+                        "filterMap": {
+                            "NodeName": "MME001BKTm"
+                        },
+                        "counterGroupsWithCounter": null,
+                        "counterGroupsWithKpi": null
+                    },
+                    "metrics": null,
+                    "kpiMetrics": null,
+                    "response": null,
+                    "userName": null,
+                    "reportName": "MME Report 1",
+                    "graphData": null
+                }

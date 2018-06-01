@@ -1,0 +1,96 @@
+.subfolder-block {
+    background: #fff;
+    padding: 0px 15px 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    position: relative;
+    height: 235px;
+}
+
+.subfolder-block .form-top {
+  margin-bottom: 5px;
+}
+
+.subfolder-list {
+    list-style: none;
+    overflow-y: auto;
+    height: 180px;
+}
+
+.subfolder-list li {
+  min-height: 90px;
+  padding-top: 8px;
+  padding-bottom: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.subfolder-list li a {
+    display: inline-block;
+    width:50px;
+    height: 50px;
+    text-align: center;
+    margin:0 auto;
+    position: relative;
+  }
+
+  .report-count {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 30px;
+    left: 3PX;
+    color: #fff;
+    font-weight: 600;
+  }
+
+.subfolder-list li img{
+max-width: 100%;
+}
+
+.subfolder-list li a, .subfolder-list .lbl {
+	color: #192239;
+}
+
+.subfolder-list .lbl {
+	line-height: normal;
+  margin-top:8px;
+  width: 100%;
+}
+
+.subfolder-list li:hover .lbl {
+  color: #d83181;
+}
+
+.subfolder-list li .remove-icon{
+  display: none;
+  width: 80%;
+  position: absolute;
+  height: 90px;
+  background: #fff;
+  top: 0;
+  left: 15px;
+  opacity: 0.8;
+  padding-top: 20px;
+  cursor: pointer;
+  border:1px solid #ddd;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2)
+  
+}
+
+.subfolder-list li:hover .remove-icon{
+  display: block;
+}
+
+.subfolder-list li .remove-icon .lbl {
+  font-style: normal;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  background-color: #d83181;
+  color: #fff;
+  padding: 5px 0;
+}
+

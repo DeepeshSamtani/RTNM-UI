@@ -1,0 +1,50 @@
+      <!--<div class="fixed-breadcrumb row">           
+           
+           	<a class="ee-logo"><img src="/assets/images/ee-logo.png"  alt=""></a>
+           	<div class="page-title">
+           	<h2 class="single-line">My Report</h2>
+             <div *ngIf="isDashboardReport"><span >Dashboard</span> 
+             <span>/</span> 
+             <a href="dashboard.html">First Dashboard</a> 
+             <span>/</span> 
+             <a href="dashboard-subfolders.html">
+              Contextual Content</a>
+             </div>
+             </div>
+           	
+           	</div>-->
+
+ <app-breadcrumbs [breadcrumb]="breadcrumbs"></app-breadcrumbs>
+ <div class="margin-reset" *ngIf="!reports || reports.length==0">
+                  <!--<mat-spinner style="margin:auto;" diameter=60 color="accent"></mat-spinner>-->
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+               </div>
+<!--<div class="page-name"><h2 class="page-title">{{dashboardDetails.displayName}}</h2></div>-->
+
+<div class="container-fluid dashboard-container">
+  <div class="row" *ngIf="reports ">
+    
+  <div *ngFor="let report of reports; let i = index;">
+<div class="col-md-4 dashboard-box subfolder text-center">
+  <div class="chart-item card-view shadow">
+    <!-- Top heading -->
+    <div *ngIf="report">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="pull-left">
+            <h3 class="block-title"><a (click)="getSpecificReport(report)">{{report.reportConfiguration && report.reportConfiguration.configuration.name}}</a></h3>
+          </div>
+
+          <div class="pull-right action-item">
+            <a title="Report Details" (click)="getSpecificReport(report)" class="icon-16 full-screen"></a>
+          </div>
+        </div>
+      </div>    
+         <app-chart-table-loader  [request]="getRequest(report)"  [index]="i"></app-chart-table-loader>
+    </div>
+  </div>
+</div>          
+        </div>        
+ </div> 
+</div>
+

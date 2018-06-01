@@ -1,0 +1,63 @@
+<div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="pull-right" >
+          <span class="foo red"></span> <span class="lbl-1">Critical</span> <span class="foo orange"></span> <span class="lbl-1">Major</span>
+          <span class="foo yellow"></span> <span class="lbl-1">Minor</span> <span class="foo blue"></span> <span class="lbl-1">Unknown</span>
+          <span class="foo green"></span> <span class="lbl-1">Normal</span>
+            
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <mat-table id="table-def" class="lessons-table mat-elevation-z24" [dataSource]="dataSource">
+        <ng-container matColumnDef="severity" >
+          <mat-header-cell *matHeaderCellDef > Severity </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.severity}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="ticketNumber">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Ticket No. </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.ticketNumber}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="owner">
+          <mat-header-cell *matHeaderCellDef> Owner </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.owner}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="acknowledged">
+          <mat-header-cell *matHeaderCellDef> Acknowledged </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.acknowledged}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="className">
+          <mat-header-cell *matHeaderCellDef> Class </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.className}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="eventName">
+          <mat-header-cell *matHeaderCellDef> Event Name </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.eventName}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="propertyName">
+          <mat-header-cell *matHeaderCellDef> Property Name </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.propertyName}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="source">
+          <mat-header-cell *matHeaderCellDef> Source </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.source}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="occurrence">
+          <mat-header-cell *matHeaderCellDef> Occurrence </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.occurrence}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="firstNotify">
+          <mat-header-cell *matHeaderCellDef> First Notified </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.firstNotify}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="lastNotify">
+          <mat-header-cell *matHeaderCellDef> Last Changed </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.lastNotify}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDialog(row)"></mat-row>
+      </mat-table>
+    </div>
+  </div>

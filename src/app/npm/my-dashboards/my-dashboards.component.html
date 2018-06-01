@@ -1,0 +1,217 @@
+<div class="fixed-breadcrumb row">  
+    <!-- <a class="ee-logo"><img src="./assets/images/ee-logo.png"  alt=""></a> -->
+    <div class="page-title">
+    <h2 class="single-line">{{isCreateDashboard ? 'Create Dashboard' : 'Edit Dashboard' }}</h2>
+    <span *ngIf="!isCreateDashboard">{{dashboard.name}}</span>
+    </div>    
+  </div>
+    <div class="modal fade " id="editReportPopup" >
+      <div class="modal-dialog modal-sm modal-dialog-centered" >
+         <div class="modal-content">
+          <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Confirm to edit Report</h5>
+        <button type="button" class="close" data-dismiss="modal" (click)="editReportId=''" aria-label="Close" style="margin-top: -38px;">
+          <span aria-hidden="true" sty>&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+         
+         All your current changes will not be saved. Do you want to continue?
+        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="editReportId=''">Cancel</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editReport(editReportId);">Yes</button>
+          </div>
+         </div>
+      </div>
+    </div>
+     <div class="modal fade " id="deleteReportPopup" >
+      <div class="modal-dialog modal-sm modal-dialog-centered" >
+         <div class="modal-content">
+          <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Confirm to remove chart</h5>
+        <button type="button" class="close" data-dismiss="modal" (click)="deleteReportId='';subDashboardId='';" aria-label="Close" style="margin-top: -38px;">
+          <span aria-hidden="true" sty>&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+         
+         Chart will be removed from  reports . Do you want to continue?
+        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="deleteReportId='';subDashboardId='';">Cancel</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="removeReport(deleteReportId,subDashboardId);">Yes</button>
+          </div>
+         </div>
+      </div>
+    </div>
+
+  <div class="modal fade" id="profilesPopup" style="top:200px;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Choose profiles to assign</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -38px;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <ul class="counter-list-item dropdown-overflow-popup" >
+               <li class="col-md-4" style="list-style:none;" *ngFor="let profile of allowedProfiles;let k =index;">
+                                <div class="form-check" [class.disabled]="profile.disabled">
+                                  <input class="form-check-input customCheck" [disabled]="profile.disabled" [class.disabled]="profile.disabled" [(ngModel)]="profile.showEnable"   type="checkbox" [id]="k"  >
+                                  <label class="form-check-label ellipsis" [attr.for]="k">{{profile.profileName }}</label>
+                                </div>
+                              </li>
+             </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="createDashboard();">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+           
+
+                <form #dashboardForm="ngForm">
+                  <div class="margin-reset" *ngIf="isLoading && !isCreateDashboard">
+                <!--<mat-spinner style="margin:auto;" diameter=60 color="accent"></mat-spinner>-->
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+              </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                     <div class="white-bg custom-form">
+                      <div class="form-group row adj-space-top">
+                        <div class="col-md-12">
+                          <input type="text" [name]="'dash'+index" #dashname="ngModel" class="form-control form-control-no " [ngClass]="(dashname.errors && (dashname.dirty || dashname.touched)) ? 'error-field':''" [(ngModel)]="dashboard.name" required>                         
+                          <span class="bar"></span>
+                          <label>Dashboard Name</label>
+                          <span class="add-error hide">Dashboard Name <span></span></span>
+                          <span *ngIf="dashname.errors && (dashname.dirty || dashname.touched)"><span class="add-error error-text">Name is mandatory</span></span>
+                        </div>
+                      </div>
+                         <div class="form-group row adj-space-top" *ngIf="!isCreateDashboard">
+                        <div class="col-md-12">
+
+                            <label class="frm-label">Assigned Profiles </label>
+                          <ul class="counter-list-item" >
+                         <li class="col-md-4" style="list-style:none;" *ngFor="let profile of allowedProfiles;let k =index;">
+                             
+                                <div class="form-check" [class.disabled]="profile.disabled">
+                                  <input class="form-check-input customCheck" [disabled]="profile.disabled" [class.disabled]="profile.disabled" [(ngModel)]="profile.showEnable" [ngModelOptions]="{standalone: true}"  type="checkbox" [id]="k"  >
+                                  <label class="form-check-label ellipsis" [attr.for]="k">{{profile.profileName }}</label>
+                                </div>
+                              </li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                    <div class="subdashboards reports" *ngFor="let subdash of dashboard.subDashboards;let k=index;" [ngClass]="{'border-empty' : !subdash.name && (!subdash.reports || subdash.reports.length==0) && subdash.addedId && !isCreateDashboard}">                     
+                      <!--<div class="closeButton" (click)="removeSubDashboard(subdash);" *ngIf="!subdash.name && (!subdash.reports || subdash.reports.length==0) && subdash.addedId && !isCreateDashboard"></div>-->
+                        <div class="form-group row">
+                          <div class="col-md-12">
+                            <input type="text" [name]="'subdash'+k" #subdName="ngModel" class="form-control form-control-no " [ngClass]="(subdName.errors && (subdName.dirty || subdName.touched)) ? 'error-field':''"  [(ngModel)]="subdash.name" required>
+                            <span class="bar"></span>
+                            <label>Sub Dashboard Name</label>
+                            <span class="add-error hide">Report Name<span></span></span>
+                             <span *ngIf="subdName.errors && (subdName.dirty || subdName.touched)"><span class="add-error error-text">Name is mandatory</span></span>
+                          </div>                      
+                      </div>
+
+                      <div class="form-group row adj-space-top offset-bottom20">
+                      <div class="col-md-12">
+                        <label class="label">Selected Charts/Tables</label>
+                        <div class="row report-type selected" style="width:110%;height:135px;overflow-y:auto;" [id]="subdash.addedId">
+                          <div class="col-md-12">
+
+                           <div class="no-image-msg text-center"  *ngIf="!subdash.reports || subdash.reports.length ==0">
+                            <div class="drop-icon">
+                                <img src="./assets/images/drop-icon.png" width="56" height="56" alt=""/>
+                            </div>
+                            <span class="text">Drag and drop charts here.</span>
+                          </div>
+
+
+                          <ul class="type-list">
+                            <li *ngFor="let report of subdash.reports" [attr.id]="report.userTemplateId">
+ 
+                              <!-- <a [ngClass]="{'active' : hasReportInSubdashboard(subdash,report) }"> -->
+                                <a [title]="report.reportName">
+                              <span class="image" *ngIf="report.reportConfiguration"> <img *ngIf="report.reportConfiguration.configuration.subType=='pie'" src="./assets/images/pie-chart2.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='Vertical Bar' || report.reportConfiguration.configuration.subType=='Bar'" src="./assets/images/vertical-bar.png"  alt="">
+                                     <img *ngIf="report.reportConfiguration.configuration.subType=='Table'" src="./assets/images/table-table.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='Spline'" src="./assets/images/spline-graph.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='donut'" src="./assets/images/donut-chart.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='Vertical Stacked Bar'" src="./assets/images/vertical-stacked-bar6.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='Horizontal Bar'" src="./assets/images/horizontal-bar4.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='line'" src="./assets/images/line-chart.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='Horizontal Stacked Bar'" src="./assets/images/horizontal-stacked-bar2.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='areaspline'" src="./assets/images/line-chart.png"  alt=""></span>
+                              <span class="text ellipsis">{{report.reportName}}</span>
+                              <span class="icon delete" [style.width]="report.myReport && !isCreateDashboard ? '41px' : '82px'" (click)="showModalDelete(report.userTemplateId,subdash.subDashboardId)" >Remove</span>
+                             <span  class="icon edit" *ngIf="report.myReport && !isCreateDashboard" (click)="showModal(report.userTemplateId)">Edit</span>
+                             </a>
+                            </li>
+
+                          </ul>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    </div>
+
+                       <!-- Existing Reports -->
+                       <div class="col-md-6">
+                                           
+                          <div class="existing-reports">
+                              <div class="row">
+                              <label class="col-md-12 label">My Reports</label>
+                              </div>
+                            <div class="row report-type">
+                                  <div class="col-md-12">
+                                  <ul class="type-list" *ngIf="myreports && myreports.length>0  ;else spinner1">
+                                    <li *ngFor="let report of myreports" [attr.id]="report.userTemplateId" class="my-reports">
+                           
+                                                         <!-- <a [ngClass]="{'active' : hasReportInSubdashboard(subdash,report) }"> -->
+                                <a [title]="report.reportName">
+                              <span class="image"> <img *ngIf="report.reportConfiguration.configuration.subType=='pie'" src="./assets/images/pie-chart2.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='Vertical Bar' || report.reportConfiguration.configuration.subType=='Bar' " src="./assets/images/vertical-bar.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='Spline'" src="./assets/images/spline-graph.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='donut'" src="./assets/images/donut-chart.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='Vertical Stacked Bar'" src="./assets/images/vertical-stacked-bar6.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='Horizontal Bar'" src="./assets/images/horizontal-bar4.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='line'" src="./assets/images/line-chart.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='Horizontal Stacked Bar'" src="./assets/images/horizontal-stacked-bar2.png"  alt="">
+                                    <img *ngIf="report.reportConfiguration.configuration.subType=='areaspline'" src="./assets/images/line-chart.png"  alt="">
+                                     <img *ngIf="report.reportConfiguration.configuration.subType=='Table'" src="./assets/images/table-table.png"  alt=""></span>
+                              <span class="text ellipsis">{{report.reportName}}</span>
+                          
+                             </a>
+                            </li>
+                                  </ul>
+                                  <ng-template #spinner1>
+                                       <mat-spinner style="vertical-align:center;margin-left:120px;" diameter=60 color="accent"></mat-spinner>
+                          </ng-template>
+                                </div>
+                                </div>
+        
+                          </div>
+                         <div class="fixed-button">
+                              <div class="col-md-12">
+                               <div class="pull-right">
+                                <a data-toggle="collapse" data-target="#selectedCounters" (click)="addAnotherSubDashboard()"><span class="more-items">Add another reports section</span></a>
+                                <button class="btn btn-secondary " *ngIf="!isCreateDashboard" type="button" [routerLink]="'/manageDashboard'">Cancel</button>     
+                                <a class="btn btn-primary " *ngIf="isCreateDashboard" type="button" (click)="save()">Create Dashboard</a>
+                                  <a class="btn btn-primary " *ngIf="!isCreateDashboard" type="button" (click)="save()">Save All Changes</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                
+                </form>
+               

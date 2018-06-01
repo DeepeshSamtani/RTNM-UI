@@ -1,0 +1,41 @@
+VIEW DETAILS
+<div class="example-container">
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.severity" disabled placeholder="Severity">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.acknowledged" disabled placeholder="acknowledged" dividerColor="accent">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.owner" disabled placeholder="Owner" dividerColor="accent">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.ticketNumber" disabled placeholder="Ticket Number" dividerColor="accent">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.className" disabled placeholder="Class Name" dividerColor="accent">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.propertyName" disabled placeholder="PropertyName" dividerColor="accent">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.eventName" disabled placeholder="Event Name" dividerColor="accent">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.source" disabled placeholder="Source" dividerColor="accent">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.occurrence" disabled placeholder="occurrence" dividerColor="accent">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.firstNotify" disabled placeholder="First Notified" dividerColor="accent">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.lastChanged" disabled placeholder="Last Changed" dividerColor="accent">
+    </mat-form-field>
+
+</div>
+
+<div class="pull-right button-container">
+        <button mat-raised-button cdkFocusInitial (click)="onCancelClick()" color="primary">Ok</button>
+</div>

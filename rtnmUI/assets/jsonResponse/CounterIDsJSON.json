@@ -1,0 +1,461 @@
+[
+  {
+    "counterGroupId": "EPC_CG_10",
+    "counterGroupDetails": null,
+    "deviceType": null,
+    "neLevel": null,
+    "cgSource": null,
+    "counterList": [
+      {
+        "counterKey": {
+          "counterId": "EPC_C_1",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir S1 bsd HO Req SGW not Chg"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_10",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir bsd source Frwd re Rsp a Cs"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_11",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir bsd HO source"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_12",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir bsd source Forward reLoc"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_13",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir S1 bsd HO source HO cancel"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_14",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir S1 bsd HO Reqrget MME"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_15",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir S1 bsd HO Succrget MME"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_16",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir bsd Failrget Acc restrict"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_17",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir bsd HO Failrget HO"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_18",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir S1 bsd HO Failrget HO Fail"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_19",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir bsd Failrget notify tm out"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_2",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir S1 bsd HO Succ SGW not Chg"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_20",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir S1 bsd HO Failrgt HO cancel"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_21",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir bsd source Other reasons"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_22",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir bsd Failrget Other reasons"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_23",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir bsd Failrget P GW reasons"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_24",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "S1 Ir HO Succ rate"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_25",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "S1 Ir HO"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_26",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "S1 inter-MME S1 HO fail t MME"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_27",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Inter-MME S1 HO fail time trgt MME"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_28",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "no S1 inter-MME HO fail on MME"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_3",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir S1 bsd HO Req SGW Chg"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_4",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir S1 bsd HO Succ SGW Chg"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_5",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "S1 Ir HO attemptsrget MME"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_6",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "S1 Ir HO Succrget MME"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_7",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir S1 bsd HO Req source MME"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_8",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir S1 bsd HO Succ source MME"
+      },
+      {
+        "counterKey": {
+          "counterId": "EPC_C_9",
+          "counterGroupTrans": null
+        },
+        "counterUnit": null,
+        "counterDescription": null,
+        "aggregation": null,
+        "counterType": "Counter",
+        "enabled": null,
+        "cSource": null,
+        "aggregationList": null,
+        "displayName": "Ir S1 bsd source DNS failed"
+      }
+    ],
+    "properties": [
+      {
+        "propertyKey": {
+          "propertyId": "EPC_P_1",
+          "counterGroups": {
+            "counterGroupId": "EPC_CG_10",
+            "counterGroupDetails": null,
+            "deviceType": null,
+            "neLevel": null,
+            "cgSource": null,
+            "counterList": null,
+            "properties": null,
+            "kpis": null,
+            "displayName": null
+          }
+        },
+        "propertyName": "MME_NAME",
+        "propertyValues": "{\"values\":[\"MME001CRO\",\"MME001LDS\",\"MME001LTN\",\"MME001MFD\",\"MME001WVN\",\"MME002BKT\",\"MME002CRO\",\"MME002LDS\",\"MME002LTN\",\"MME002MFD\",\"MME002WVN\",\"MME501ENF\",\"MME501PRS\",\"MME001BKT\"]}"
+      },
+      {
+        "propertyKey": {
+          "propertyId": "EPC_P_2",
+          "counterGroups": {
+            "counterGroupId": "EPC_CG_10",
+            "counterGroupDetails": null,
+            "deviceType": null,
+            "neLevel": null,
+            "cgSource": null,
+            "counterList": null,
+            "properties": null,
+            "kpis": null,
+            "displayName": null
+          }
+        },
+        "propertyName": "WHOLE_SYSTEM",
+        "propertyValues": null
+      },
+      {
+        "propertyKey": {
+          "propertyId": "EPC_P_3",
+          "counterGroups": {
+            "counterGroupId": "EPC_CG_10",
+            "counterGroupDetails": null,
+            "deviceType": null,
+            "neLevel": null,
+            "cgSource": null,
+            "counterList": null,
+            "properties": null,
+            "kpis": null,
+            "displayName": null
+          }
+        },
+        "propertyName": "NETWORK_NAME",
+        "propertyValues": null
+      }
+    ],
+    "kpis": null,
+    "displayName": "HWI_MME_S1IRMMEHO"
+  }
+]

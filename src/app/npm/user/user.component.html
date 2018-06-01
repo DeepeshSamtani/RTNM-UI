@@ -1,0 +1,46 @@
+<div class="fixed-breadcrumb row">           
+  
+    <!-- <a class="ee-logo"><img src="./assets/images/ee-logo.png"  alt=""></a> -->
+    <div class="page-title">
+    <h2 class="single-line">User Profile</h2>
+    </div>
+    
+  </div>
+
+  <div class="fixed-tab-nav sm" [ngClass]="{'sm' : !isDashboardReport}">
+    <div class="row">
+     <div class="col-lg-12 col-sm-12">
+
+        <ul class="nav nav-tabs pull-left" role="tablist">
+            <li class="nav-item active">
+                <a class="nav-link" data-toggle="tab" href="#scheduledReports" role="tab">Scheduled Reports</a>
+            </li>
+        </ul>
+
+<div class="pull-right" >
+ 
+
+</div>
+     </div>
+    </div>
+</div>
+
+<div class="container-fluid page-container users top-tab">
+    <div class="main-container tab-container">
+      <div class="tab-content">
+        <div class="tab-pane active" id="scheduledReports" role="tabpanel">
+          <div class="row">
+            <app-schedular [displayScheduledReports]="true"></app-schedular>
+      </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+

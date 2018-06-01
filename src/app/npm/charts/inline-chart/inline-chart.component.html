@@ -1,0 +1,77 @@
+        <div class="type-change" *ngIf="showChartTypeSelect">
+                    <div class="row">                  
+                     <!--  <div class="col-md-12"  *ngIf="showChartTypeSelect">
+                        <input type="text" class="form-control form-control-no dropdown" [(ngModel)]="charTy.displayName" required (blur)="hideDropdown($event)" (focus)="showDropdown($event);" >
+                       
+                       <div class="drop-items drop-list hide" clickOutside>
+                          <ul class="dropdown-overflow">
+                            <li *ngFor="let element of types"  (mousedown)="changeChartType(element);" >
+                             <label> {{element.displayName}}</label>
+  
+                            </li>
+                          </ul>
+                        </div>
+                        <span class="bar"></span>
+                       </div> -->
+                      <select  (ngModelChange)="changeChartType($event);" [ngModel]="TypeOfChart.displayName" >
+                        <option [value]="element.displayName" *ngFor="let element of types" (click)="TypeOfChart = element;">{{element.displayName}}</option>
+                      </select>
+                       <!--<select>
+                         <option selected>
+                          Bar
+                         </option>
+
+                         <option>
+                            Stacked Bar
+                           </option>
+
+                           <option>
+                              Horizontal Bar
+                             </option>
+
+                       </select>-->
+
+                    </div> 
+            </div>
+                    <div class="" id="viewDimension">
+                    <div class="" *ngIf="dimensionValue && showFilter">
+                      <div class="form-top row">
+                      <div class="filter-list dropdown" *ngFor="let dimension of dimensionKeys;let k=index;">
+                        <!--<div class="form-control form-control-no dropdown dimnesion-button" [attr.name]="'k'" required  (click)="showDropdown($event);" >{{hasEnabled(dimension) && hasEnabled(dimension).length >0 ? hasEnabled(dimension)[0].name+'+'+hasEnabled(dimension).length : dimension }}</div>-->
+                          <div class="counter" style="margin-bottom:0px;" >
+
+                                <a class="counter-groups" [attr.name]="k" (click)="showDropdown($event);" >
+                                <span  class=" {{k}}"   [attr.name]="k">
+                                <span class="{{k}}"  [attr.name]="k" *ngIf="hasEnabled(dimension) && hasEnabled(dimension).length >1 ; else dimensi">
+                                  <span class="ellipsis-dimension {{k}} pull-left " [attr.title]="hasEnabled(dimension)[0].name"  [attr.name]="k">{{ hasEnabled(dimension)[0].name }}</span>
+                                  <span class="dimension-length {{k}} " [attr.name]="k">+{{hasEnabled(dimension).length-1}}</span>
+                                </span>
+                                <ng-template #dimensi><span class="ellipsis-dimension {{k}}" [attr.name]="k" [attr.title]="hasEnabled(dimension)[0].name" *ngIf="hasEnabled(dimension) && hasEnabled(dimension).length ==1 ;else noDimension"> {{ hasEnabled(dimension)[0].name }}</span> <ng-template #noDimension >Select {{dimension}}</ng-template></ng-template>
+                               
+                                </span>
+                                
+                                </a>
+                              </div> 
+                        <!--<span class="icon-16 icn_clear_16 clear-btn hide" title="clear contents" (mousedown)="element=''"></span>-->
+                        <div class="drop-items drop-list hide" style="width:84%;" clickOutside>
+                          <ul class="dropdown-overflow filter-items">
+                             <input type="text" class="search-query-sm" [placeholder]="'Search '+dimension" [(ngModel)]="dimensions.searchProp">
+                            <li *ngFor="let element of dimensions[dimension] | searchpipe : dimensions.searchProp : ['name'];let i=index;" (focus)="showDropdown($event);"  (blur)="hideDropdown($event)">
+                               <input class="form-check-input customCheck" type="checkbox" [(ngModel)]="element.showEnable" (change)="changeSeries(dimension,element.showEnable,element,k);"  [attr.id]="'radio2'+k+i"  />
+                        <label class="form-check-label ellipsis" [title]="element.name" [attr.for]="'radio2'+k+i">{{element.name}}</label>
+  
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    
+  </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="no-data-displayed" *ngIf="!seriesData || seriesData.length==0 ">No data to display, click on <span class="i-report-info">Report Info</span><br/> to see the list of metrics.</div>
+  <div #chart [id]="'chart'+index"></div>
+  
+</div>
+

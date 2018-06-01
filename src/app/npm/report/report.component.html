@@ -1,0 +1,211 @@
+
+
+<app-breadcrumbs [breadcrumb]="breadcrumbs"></app-breadcrumbs>
+
+    
+<div class="fixed-tab-nav sm" [ngClass]="{'sm' : !isDashboardReport}">
+
+  <div class="row">
+    <div class="col-lg-12 col-sm-12">
+      <div class="pull-left report-name"  *ngIf="!isDashboardReport">
+        <div class="report-heading">Device Type : {{report.deviceType}} | Aggregation Granularity : {{ report.granularity}} | Report Interval : {{report.intervals}}</div>
+      </div>
+      <div class="pull-left col-md-8" *ngIf="isDashboardReport" >
+        <div *ngIf="addCarousel then withCarousel ; else withOutCarousel"></div>
+       
+
+      <ng-template #withOutCarousel>
+         <ul class="report-items " style="list-style: none;margin-left: 10px;"  id="report-items" >
+         <li  class="report-li-items" *ngFor="let dashreport of subDashboardReportConfigList" [id]="dashreport.userTemplateId" style="width:100px;" [class.selected]="dashreport.userTemplateId == reportId" (click)="getSpecificReport(dashreport)">
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='pie'">  <img  width="16" height="16" src="./assets/images/pie-chart2.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && (dashreport.reportConfiguration.configuration.subType=='Vertical Bar' || dashreport.reportConfiguration.configuration.subType=='Bar')"><img   width="16" height="16" src="./assets/images/vertical-bar-24.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='areaspline'"><img   width="16" height="16" src="./assets/images/bar3-icon.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='Spline'"><img  width="16" height="16" src="./assets/images/spline-graph-24.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='Vertical Stacked Bar'"><img  width="16" height="16" src="./assets/images/vertical-stacked-bar-24.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='Horizontal Bar'"><img   width="16" height="16" src="./assets/images/horizontal-bar-24.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='line'"> <img  width="16" height="16" src="./assets/images/line-chart-24.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='Horizontal Stacked Bar'"> <img  width="16" height="16" src="./assets/images/horizontal-stacked-24.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='Table'"> <img  width="16" height="16" src="./assets/images/table-table.png"  alt=""></span>
+
+
+          <span class="lbl"> {{ dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.name}}</span>
+         
+        </li>
+         </ul>
+      </ng-template>
+    <ng-template #withCarousel>
+       <ul class="report-items " style="list-style: none;margin-left: 10px;"  id="report-items" >
+       <ngu-carousel (initData)="initDataFn($event)"
+        [inputs]="carouselOne">
+          <ngu-tile NguCarouselItem  *ngFor="let dashreport of subDashboardReportConfigList" >
+            
+            <li class="report-li-items" [ngClass]="{'selected' : dashreport.userTemplateId == reportId}"(click)="getSpecificReport(dashreport)">
+       <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='pie'">  <img  width="16" height="16" src="./assets/images/pie-chart2.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && (dashreport.reportConfiguration.configuration.subType=='Vertical Bar' || dashreport.reportConfiguration.configuration.subType=='Bar')"><img   width="16" height="16" src="./assets/images/vertical-bar-24.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='areaspline'"><img   width="16" height="16" src="./assets/images/bar3-icon.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='Spline'"><img  width="16" height="16" src="./assets/images/spline-graph-24.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='Vertical Stacked Bar'"><img  width="16" height="16" src="./assets/images/vertical-stacked-bar-24.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='Horizontal Bar'"><img   width="16" height="16" src="./assets/images/horizontal-bar-24.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='line'"> <img  width="16" height="16" src="./assets/images/line-chart-24.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='Horizontal Stacked Bar'"> <img  width="16" height="16" src="./assets/images/horizontal-stacked-24.png"  alt=""></span>
+          <span class="img" *ngIf="dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.subType=='Table'"> <img  width="16" height="16" src="./assets/images/table-table.png"  alt=""></span>
+
+
+          <span class="lbl"> {{ dashreport.reportConfiguration && dashreport.reportConfiguration.configuration.name}}</span>
+      </li>
+          </ngu-tile>
+          <button NguCarouselPrev class='leftRs'>&lt;</button>
+          <button NguCarouselNext class='rightRs'>&gt;</button>
+    </ngu-carousel>
+             </ul>
+    </ng-template>
+      </div>
+
+      <div class="pull-right">
+        <ul class="action-menu">
+          <!-- <li>
+            <a [title]="'Previous'" *ngIf="isDashboardReport" (click)="gotoSubDashboard()"><i class="icon-24 icon-prev"></i></a>
+          </li> -->
+
+           <li class="action-menu-li">
+
+            <a href="#filterTab" (click)="getfilterConfig()" data-toggle="tab" class="action-menu-tab">
+             <i title="Filter Report" class="icon-24 icon-report-filter"></i>
+            </a>
+        
+          </li>
+          <li class="action-menu-li">
+            <a class="action-menu-tab" [title]="'Schedule Report'" data-toggle="tab" (click)="resetForm=!resetForm;" href="#scheduleReport"><i class="icon-24 icon-schedule-report"></i></a>
+          </li>
+          <li class="action-menu-li">
+            <a [title]="'Download CSV'" (click)="exportReport('CSV')"><i class="icon-24 icon-download-csv"></i></a>
+          </li>
+          <li class="action-menu-li">
+            <a [title]="'Download PDF'" (click)="exportReport('PDF')"><i class="icon-24 icon-download-pdf"></i></a>
+          </li>
+          <li class="action-menu-li">
+            <a (click)="getTemplateConfig()" class="enabled toggleNavbar " [class.disabled]="isDashboardReport">
+                    <i title="Edit Report" class="icon-24 icon-edit"></i>
+                 </a>
+          </li>
+          <li class="page-refresh action-menu-li">
+            <a class="toggleNavbar disabled">
+                    <i title="Refresh Report" class="icon-24 icon-refresh"></i>
+                  </a>
+          </li>
+          
+            
+        
+          
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid dasboard-container top-tab">
+<div *ngIf="isLoading">
+                <!--<mat-spinner style="margin:auto;" diameter=60 color="accent"></mat-spinner>-->
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+              </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="dashboard-block subfolder ">
+        <!-- Top heading -->
+
+        <app-schedular [reportId]="reportId" [resetForm]="resetForm" [isDashboardReport]="isDashboardReport"></app-schedular>
+
+        <!-- <a id="toTop1" title="More Action" [class.collapsed]="isCollapsed" class="fixed-action-menu" style="top:72px;" (click)="showPageAction()">
+          <i class="icon-24 icon-floating"></i></a> -->
+
+        <section>
+          <div class="row">
+            <div class="col-md-12">
+              <app-chart-table *ngIf="report" [defaultType]="report.type" [height]="450" [showGraph]="report.chartResp.showGraph" [response]="report.chartResp" [refreshContinously]="refreshDataContinuously"
+                [menuToggle]="{toggle :menuToggled,class:'col-md-12'}" [eventData]="report.tableResp" [index]="'report'+i"
+                [type]="report.chartType" [menuToggle]="menuToggle" [counterListForReport]="counterListForReport"></app-chart-table>
+               
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <div class="tabHolder"  style="top:114px;"  id="filterTab">
+    <span class="arrow"></span>
+    <h3>Filter Report</h3>
+    <div class="form-horizontal custom-form">
+      <div class="form-group row adj-space">
+        <div class="col-sm-3 dropdown">
+          <input type="text" class="form-control form-control-no dropdown" [(ngModel)]="filterReport.granularitySelected" >
+          <span class="bar"></span>
+          <label>Granularity</label>
+          <span class="add-error hide">Granularity<span></span></span>
+          <div class="drop-items drop-list hide">
+            <ul>
+              <li *ngFor="let granularity of newReportModel.granularities" (mousedown)="filterReport.granularitySelected=granularity">
+                {{granularity}}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-8 no-column-spacing">
+          <div class="col-sm-4 dropdown">
+            <input type="text" class="form-control form-control-no dropdown" [(ngModel)]="filterReport.timestring" >
+            <div class="drop-items drop-list hide">
+              <ul>
+                <li *ngFor="let timestr of newReportModel.timeStringList" (mousedown)="filterReport.timestring=timestr">
+                  <label>{{timestr}}</label>
+                </li>
+              </ul>
+            </div>
+            <span class="bar"></span>
+            <label>Duration</label>
+            <span class="add-error hide">Duration<span></span></span>
+          </div>
+          <div class="col-md-8 dropdown" [hidden]="filterReport.timestring == 'Custom'">
+            <input type="text" class="form-control form-control-no dropdown" [(ngModel)]="filterReport.timerange">
+            <div class="drop-items drop-list hide">
+              <ul>
+                <li *ngFor="let timerg of newReportModel.timeRangeList" (mousedown)="filterReport.timerange=timerg">
+                  <label>{{timerg}}</label>
+                </li>
+              </ul>
+            </div>
+            <span class="bar"></span>
+            <span class="add-error hide">This field<span></span></span>
+          </div>
+          <div class="col-sm-4" [hidden]="filterReport.timestring != 'Custom'">
+            <input type="text" class="form-control form-control-no"  required [(ngModel)]="filterReport.fromDate" id="datePicker"  />
+            <span class="bar"></span>
+            <label>From</label>
+            <span class="add-error hide">From date<span></span></span>
+            <div #datePicker></div>
+            <span class="calender-icon"></span>
+             <!-- <span *ngIf="commonFieldErrorUtilService.isFieldValid('fromDate')"><span class="add-error error-text">Please select a start date</span></span> -->
+          </div>
+          <div class="col-sm-4" [hidden]="filterReport.timestring != 'Custom'">
+            <input type="text" class="form-control form-control-no"  required [(ngModel)]="filterReport.toDate" id="todatePicker" />
+            <span class="bar"></span>
+            <label>To</label>
+            <span class="add-error hide">To date<span></span></span>
+            <div style="top:218px;z-index:68;" class="filter-report-tab" #todatePicker></div>
+            <span class="calender-icon"></span>
+             <!-- <span *ngIf="commonFieldErrorUtilService.isFieldValid('toDate')"><span class="add-error error-text">Please select an end date</span></span> -->
+        </div>
+       
+       
+      </div>
+      <!-- <div class="dateIcon" style="padding-top:4px;"> <a (click)="getfilterConfig()" class="toggleNavbar" title="Reset" class="rmv-clear"><span ></span></a> </div> -->
+    </div>
+    <div class="tabHolder-footer">
+      <button type="submit" class="btn btn-secondary btn-space closeButton" id="closeFilter">Cancel</button>
+      <button type="submit" class="btn  btn-primary closeButton" id="applyFilter" (click)="getReportAccordingToFilter()">Apply</button>
+    </div>
+  </div>
+  </div>

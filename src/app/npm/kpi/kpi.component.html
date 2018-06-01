@@ -1,0 +1,218 @@
+<app-breadcrumbs [breadcrumb]="breadcrumb"></app-breadcrumbs>
+
+<div class="kpi-content">
+  <mat-tab-group [selectedIndex]="selectedTab" (selectedTabChange)="nextTab($event.index)">
+    <mat-tab label="KPI Properties">
+      <div class="kpi-tab-content">
+        <!-- Loading spinner animation -->
+        <div *ngIf="isLoading" class="col-sm-12" style="height: 200px; margin-top: 60px;">
+          <mat-spinner style="margin:auto;" diameter=60 color="accent"></mat-spinner>
+        </div>
+        <!-- Next and Cancel buttons -->
+        <div *ngIf="!isLoading" class="pull-right">
+          <button mat-raised-button (click)="nextTab(1)" color="primary">Next</button>
+          <button mat-raised-button *ngIf="isEditMode" (click)="cancelEditMode()" color="primary" style="margin-left: 10px;">Cancel</button>
+        </div>
+        <!-- KPI Properties form -->
+        <div class="col-sm-12" [formGroup]="kpiPropertiesForm" style="margin-top: 15px;">
+          <mat-form-field class="col-sm-12 col-md-6 kpi-form-field">
+            <input matInput placeholder="KPI name" value="" formControlName="name">
+            <mat-error *ngIf="kpiPropertiesForm.get('name').hasError('required')">KPI name is required</mat-error>
+            <mat-error *ngIf="kpiPropertiesForm.get('name').hasError('pattern')">Special characters are not allowed</mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-sm-12 col-md-3 kpi-form-field">
+            <mat-select placeholder="Aggregation type" formControlName="aggregationType">
+              <mat-option *ngFor="let type of aggregationTypes" [value]="type">{{type}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="col-sm-12 col-md-3 kpi-form-field">
+            <mat-select placeholder="Unit" formControlName="unit">
+              <mat-option *ngFor="let unit of units" [value]="unit">{{unit}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="col-sm-12 kpi-form-field">
+            <input matInput placeholder="Description" value="" formControlName="description">
+            <mat-error>Description is required</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="KPI Configuration">
+      <div class="kpi-tab-content">
+        <!-- Loading spinner animation -->
+        <div *ngIf="isLoading" class="col-sm-12" style="height: 200px; margin-top: 60px;">
+          <mat-spinner style="margin:auto;" diameter=60 color="accent"></mat-spinner>
+        </div>
+        <!-- Back, Save and Cancel buttons -->
+        <div *ngIf="!isLoading" class="pull-right">
+          <button mat-raised-button (click)="nextTab(0)" color="primary">Back</button>
+          <button mat-raised-button (click)="saveKPI()" color="primary" style="margin-left: 10px;" [disabled]="!kpiPropertiesForm.valid || formulaTokens.length == 0 || operatorKeys.includes(formulaTokens[formulaTokens.length -1])">{{saveButtonName}}</button>
+          <button mat-raised-button *ngIf="isEditMode" (click)="cancelEditMode()" color="primary" style="margin-left: 10px;">Cancel</button>
+        </div>
+        <div *ngIf="!isLoading" class="col-sm-12" style="margin-top: 15px; padding: 0px;">
+          <div class="main-kpi-form-container">
+            <!-- Device type and Counter Group -->
+            <div class="col-sm-12 col-md-3" style="border-right: 1px solid #AAA; padding: 15px 0px;">
+              <mat-form-field class="col-sm-12 kpi-form-field">
+                <mat-select placeholder="Device type" [(ngModel)]="selectedDeviceType" [disabled]="isEditMode">
+                  <mat-option *ngFor="let device of deviceTypes" [value]="device" (click)="getCounterGroups(device)">{{device}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div class="col-sm-12 kpi-header">
+                Metric Group
+              </div>
+              <!-- Loading spinner animation -->
+              <div *ngIf="isCGLoading" class="col-sm-12" style="height: 540px; margin-top: 60px;">
+                <mat-spinner style="margin:auto;" diameter=60 color="accent"></mat-spinner>
+              </div>
+              <!-- Search input for Counter Group -->
+              <mat-form-field *ngIf="!isCGLoading" class="col-sm-12 kpi-form-field" style="margin-top: 20px; margin-bottom: 0px;">
+                <input matInput placeholder="Search" value="" [(ngModel)]="searchTextCG">
+              </mat-form-field>
+              <!-- Counter group list -->
+              <mat-list *ngIf="!isCGLoading" class="col-sm-12" role="list" style="height: 518px; overflow-y: auto;">
+                <ng-container *ngFor="let group of counterGroupList | kpiSearch: searchTextCG">
+                  <mat-list-item class="cg-list-item" role="listitem" (click)="getCounters(group.counterGroupId)" [ngClass]="{'active': selectedCounterGroupId === group.counterGroupId}">
+                    {{group.displayName}}
+                    <mat-divider></mat-divider>
+                  </mat-list-item>
+                </ng-container>
+              </mat-list>
+            </div>
+
+            <div class="col-sm-12 col-md-9 rm-col-padding" style="padding: 0px;">
+              <div class="col-sm-12 col-md-7 rm-col-padding" style="height: 450px;">
+                <!-- Counters -->
+                <div class="col-sm-12 kpi-header" style="border-top: none;">
+                  Metrics
+                </div>
+                <!-- Loading spinner animation -->
+                <div *ngIf="isCounterLoading" class="col-sm-12" style="height: 200px; margin-top: 60px;">
+                  <mat-spinner style="margin:auto;" diameter=60 color="accent"></mat-spinner>
+                </div>
+                <!-- Search counters field -->
+                <mat-form-field *ngIf="!isCounterLoading" class="col-sm-12 kpi-form-field" style="margin-bottom: 0px; margin-top: 10px;">
+                  <input matInput placeholder="Search" value="" [(ngModel)]="searchTextCounters" [disabled]="counters.length == 0">
+                </mat-form-field>
+                <!-- Clear all counters button -->
+                <div *ngIf="!isCounterLoading" class="pull-right" style="margin: 5px 10px;">
+                  <button mat-raised-button (click)="clearAllCounters()" color="primary" [disabled]="selectedCounters.length == 0">Clear all</button>
+                </div>
+                <!-- No counters text -->
+                <div class="col-sm-12 no-content-text" *ngIf="counters.length == 0 && !isCounterLoading" style="color: #888">
+                  Select a Metric group to get metrics here
+                </div>
+                <!-- Counter list -->
+                <div *ngIf="!isCounterLoading" class="col-sm-12 rm-col-padding" style="height: 285px; overflow-y: auto;">
+                  <mat-checkbox class="col-sm-12" *ngFor="let counter of counters | kpiSearch: searchTextCounters" (change)="selectCounter($event, counter)"
+                    [checked]="counter.checked">{{counter.displayName}} ({{counter.counterUnit}})</mat-checkbox>
+                </div>
+              </div>
+              <!-- Selected Counters -->
+              <div class="col-sm-12 col-md-5 rm-col-padding" style="height: 450px; border-left: 1px solid #AAA;">
+                <div class="col-sm-12 kpi-header" style="border-top: none;">
+                  Selected Metrics
+                </div>
+                <div class="col-sm-12 rm-col-padding" style="height: 390px; overflow-y: auto; margin-top: 10px;">
+                  <button mat-button class="selected-counter" *ngFor="let counter of selectedCounters" (click)="addTokenToFormula(counter.displayName)"
+                    [disabled]="isOperatorMode">
+                    {{counter.displayName}}</button>
+                </div>
+              </div>
+              <!-- Formula section -->
+              <div class="col-sm-12 rm-col-padding">
+                <div class="col-sm-12 kpi-header">
+                  Formula
+                  <a *ngIf="operatorKeys.includes(formulaTokens[formulaTokens.length -1])" class="formula-error">Invalid formula</a>
+                </div>
+                <div class="col-sm-12 rm-col-padding" style="margin-top: 5px;">
+                  <button class="numkey" mat-button *ngFor="let n of numKeys" (click)="addTokenToFormula(n)" [disabled]="selectedCounters.length == 0 || !isNumMode">{{n}}</button>
+                  <button class="numkey" mat-button (click)="addTokenToFormula('(')">(</button>
+                  <button class="numkey" mat-button (click)="addTokenToFormula(')')">)</button>
+                  <button class="numkey" mat-button *ngFor="let o of operatorKeys" (click)="addTokenToFormula(o)" [disabled]="!isOperatorMode || selectedCounters.length == 0">{{o}}</button>
+                </div>
+                <div class="pull-right">
+                  <button mat-raised-button (click)="popFormulaTokens()" color="primary" style="margin-right: 10px;" [disabled]="formulaTokens.length == 0">Remove</button>
+                  <button mat-raised-button (click)="clearAllFormulaTokens()" color="primary" [disabled]="formulaTokens.length == 0" style="margin-right: 10px;">Clear all</button>
+                </div>
+                <div class="col-sm-12 rm-col-padding" style="height: 160px; overflow-y: auto;">
+                  <div class="token" *ngFor="let token of formulaTokens">
+                    {{token}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="KPI List">
+      <div class="kpi-tab-content">
+        <!-- Loading spinner animation -->
+        <div *ngIf="isListLoading" class="col-sm-12" style="height: 650px; margin-top: 60px;">
+          <mat-spinner style="margin:auto;" diameter=60 color="accent"></mat-spinner>
+        </div>
+        <!-- No records text -->
+        <div *ngIf="isNoKPIRecords" class="col-sm-12 no-content-text" style="height: 650px;">No KPI records found</div>
+
+        <!-- Search input for table -->
+        <mat-form-field *ngIf="!isListLoading && !isNoKPIRecords" class="col-sm-12 kpi-form-field">
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+        </mat-form-field>
+
+        <!-- KPI List table -->
+        <div class="kpi-table-container">
+          <mat-table *ngIf="!isListLoading && !isNoKPIRecords" #table [dataSource]="kpiListDataSource">
+            <!-- KPI Name Column -->
+            <ng-container matColumnDef="KPI name">
+              <mat-header-cell *matHeaderCellDef> KPI Name </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Aggregation Type Column -->
+            <ng-container matColumnDef="Aggregation type">
+              <mat-header-cell *matHeaderCellDef> Aggregation Type </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.aggregationType}} </mat-cell>
+            </ng-container>
+
+            <!-- Unit Column -->
+            <ng-container matColumnDef="Unit">
+              <mat-header-cell *matHeaderCellDef> Unit </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.unit}} </mat-cell>
+            </ng-container>
+
+            <!-- Formula Column -->
+            <ng-container matColumnDef="Formula">
+              <mat-header-cell *matHeaderCellDef> Formula </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.formulaInDisplayName}} </mat-cell>
+            </ng-container>
+
+            <!-- Description Column -->
+            <ng-container matColumnDef="Description">
+              <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+            </ng-container>
+
+            <!-- Actions - Edit and Delete -->
+            <ng-container matColumnDef="Actions">
+              <mat-header-cell *matHeaderCellDef style="display:flex; justify-content:flex-end;"> Actions </mat-header-cell>
+              <mat-cell *matCellDef="let element"  style="display:flex; justify-content:flex-end;">
+                <a class="table-action" (click)="editKPI(element)">
+                  <i class="fa fa-pencil"></i>
+                </a>
+                <a class="table-action" (click)="openDeleteDialog(element)">
+                  <i class="fa fa-trash"></i>
+                </a>
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="kpiListColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: kpiListColumns;"></mat-row>
+          </mat-table>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

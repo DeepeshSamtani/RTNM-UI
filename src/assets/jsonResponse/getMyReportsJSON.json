@@ -1,0 +1,360 @@
+
+           [ {
+                    "userTemplateId": "tft768",
+                    "reportConfiguration": {
+                        "configuration": {
+                            "attributes": null,
+                            "properties": null,
+                            "metrics": [
+                                {
+                                    "id": "117490514"
+                                },
+                                {
+                                    "id": "117490515"
+                                },
+                                {
+                                    "id": "117490519"
+                                }
+                            ],
+                            "kpiMetrics": null,
+                            "name": "MME Report 1",
+                            "type": "Graph",
+                            "subType": "line",
+                            "deviceType": "MME",
+                            "entity": null,
+                            "dimensions": [
+                                {
+                                    "name": "NodeName",
+                                    "displayName": "NodeName",
+                                    "id": "NodeName"
+                                }
+                            ],
+                            "context": null
+                        },
+                        "filter": null,
+                        "samplingPeriod": null,
+                        "intervals": "last 1 month",
+                        "pagination": {
+                            "pagenumber": 1,
+                            "pagesize": 10000,
+                            "pagingSpec": null
+                        },
+                        "granularity": "HOURLY",
+                        "reportDataType": "grouped",
+                        "filterMap": {
+                            "NodeName": "MME001BKTm"
+                        },
+                        "counterGroupsWithCounter": null,
+                        "counterGroupsWithKpi": null
+                    },
+                    "metrics": null,
+                    "kpiMetrics": null,
+                    "response": null,
+                    "userName": null,
+                    "reportName": "MME Report 1",
+                    "graphData": null
+                },
+                {
+                    "userTemplateId": "1xtY8L",
+                    "reportConfiguration": {
+                        "configuration": {
+                            "attributes": null,
+                            "properties": null,
+                            "metrics": [
+                                {
+                                    "id": "SUM_117490515",
+                                    "aggregationType": "SUM"
+                                },
+                                {
+                                    "id": "SUM_117490518",
+                                    "aggregationType": "SUM"
+                                },
+                                {
+                                    "id": "SUM_117491015",
+                                    "aggregationType": "SUM"
+                                },
+                                {
+                                    "id": "SUM_117491018",
+                                    "aggregationType": "SUM"
+                                }
+                            ],
+                            "kpiMetrics": null,
+                            "name": "MME Report 2",
+                            "type": "Graph",
+                            "subType": "Horizontal Stacked Bar",
+                            "deviceType": "MME",
+                            "entity": null,
+                            "dimensions": [
+                                {
+                                    "name": "NodeName",
+                                    "displayName": "NodeName",
+                                    "id": "NodeName"
+                                }
+                            ],
+                            "context": null
+                        },
+                        "filter": {
+                            "condition": "OR",
+                            "rules": [
+                                {
+                                    "id": "SUM_117490515",
+                                    "value": "-2147483648",
+                                    "type": "bound"
+                                },
+                                {
+                                    "id": "SUM_117490518",
+                                    "value": "-2147483648",
+                                    "type": "bound"
+                                },
+                                {
+                                    "id": "SUM_117491015",
+                                    "value": "-2147483648",
+                                    "type": "bound"
+                                },
+                                {
+                                    "id": "SUM_117491018",
+                                    "value": "-2147483648",
+                                    "type": "bound"
+                                }
+                            ]
+                        },
+                        "samplingPeriod": null,
+                        "intervals": "Last 1 month",
+                        "pagination": {
+                            "pagenumber": 1,
+                            "pagesize": 10000,
+                            "pagingSpec": null
+                        },
+                        "granularity": "HOURLY",
+                        "reportDataType": "grouped",
+                        "filterMap": {},
+                        "counterGroupsWithCounter": null,
+                        "counterGroupsWithKpi": null
+                    },
+                    "metrics": null,
+                    "kpiMetrics": null,
+                    "response": null,
+                    "userName": null,
+                    "reportName": "MME Report 2",
+                    "graphData": null
+                },
+                {
+                    "userTemplateId": "WQlrWS",
+                    "reportConfiguration": {
+                        "configuration": {
+                            "attributes": null,
+                            "properties": null,
+                            "metrics": [
+                                {
+                                    "id": "SUM_117490515",
+                                    "aggregationType": "SUM"
+                                },
+                                {
+                                    "id": "SUM_117490518",
+                                    "aggregationType": "SUM"
+                                }
+                            ],
+                            "kpiMetrics": null,
+                            "name": "MME Report 3",
+                            "type": "Graph",
+                            "subType": "Vertical Bar",
+                            "deviceType": "MME",
+                            "entity": null,
+                            "dimensions": [
+                                {
+                                    "name": "NodeName",
+                                    "displayName": "NodeName",
+                                    "id": "NodeName"
+                                },
+                                {
+                                    "name": "SubElementID",
+                                    "displayName": "SubElementID",
+                                    "id": "SubElementID"
+                                }
+                            ],
+                            "context": null
+                        },
+                        "filter": {
+                            "condition": "OR",
+                            "rules": [
+                                {
+                                    "id": "SUM_117490515",
+                                    "value": "-2147483648",
+                                    "type": "bound"
+                                },
+                                {
+                                    "id": "SUM_117490518",
+                                    "value": "-2147483648",
+                                    "type": "bound"
+                                }
+                            ]
+                        },
+                        "samplingPeriod": null,
+                        "intervals": "Last 1 month",
+                        "pagination": {
+                            "pagenumber": 1,
+                            "pagesize": 10000,
+                            "pagingSpec": null
+                        },
+                        "granularity": "HOURLY",
+                        "reportDataType": "grouped",
+                        "filterMap": {
+                            "NodeName": "MME001BKTm"
+                        },
+                        "counterGroupsWithCounter": null,
+                        "counterGroupsWithKpi": null
+                    },
+                    "metrics": null,
+                    "kpiMetrics": null,
+                    "response": null,
+                    "userName": null,
+                    "reportName": "MME Report 3",
+                    "graphData": null
+                },
+                {
+                    "userTemplateId": "JRYQII",
+                    "reportConfiguration": {
+                        "configuration": {
+                            "attributes": null,
+                            "properties": null,
+                            "metrics": [
+                                {
+                                    "id": "SUM_117490518",
+                                    "aggregationType": "SUM"
+                                },
+                                {
+                                    "id": "SUM_117490521",
+                                    "aggregationType": "SUM"
+                                }
+                            ],
+                            "kpiMetrics": null,
+                            "name": "MME Report 4",
+                            "type": "Graph",
+                            "subType": "Vertical Stacked Bar",
+                            "deviceType": "MME",
+                            "entity": null,
+                            "dimensions": [
+                                {
+                                    "name": "NodeName",
+                                    "displayName": "NodeName",
+                                    "id": "NodeName"
+                                },
+                                {
+                                    "name": "SubElementID",
+                                    "displayName": "SubElementID",
+                                    "id": "SubElementID"
+                                }
+                            ],
+                            "context": null
+                        },
+                        "filter": {
+                            "condition": "OR",
+                            "rules": [
+                                {
+                                    "id": "SUM_117490518",
+                                    "value": "-2147483648",
+                                    "type": "bound"
+                                },
+                                {
+                                    "id": "SUM_117490521",
+                                    "value": "-2147483648",
+                                    "type": "bound"
+                                }
+                            ]
+                        },
+                        "samplingPeriod": null,
+                        "intervals": "Last 1 month",
+                        "pagination": {
+                            "pagenumber": 1,
+                            "pagesize": 10000,
+                            "pagingSpec": null
+                        },
+                        "granularity": "HOURLY",
+                        "reportDataType": "grouped",
+                        "filterMap": {
+                            "NodeName": "MME001BKTm"
+                        },
+                        "counterGroupsWithCounter": null,
+                        "counterGroupsWithKpi": null
+                    },
+                    "metrics": null,
+                    "kpiMetrics": null,
+                    "response": null,
+                    "userName": null,
+                    "reportName": "MME Report 4",
+                    "graphData": null
+                },
+                {
+                    "userTemplateId": "JRYQII",
+                    "reportConfiguration": {
+                        "configuration": {
+                            "attributes": null,
+                            "properties": null,
+                            "metrics": [
+                                {
+                                    "id": "SUM_117490518",
+                                    "aggregationType": "SUM"
+                                },
+                                {
+                                    "id": "SUM_117490521",
+                                    "aggregationType": "SUM"
+                                }
+                            ],
+                            "kpiMetrics": null,
+                            "name": "MME Report 5",
+                            "type": "Graph",
+                            "subType": "areaspline",
+                            "deviceType": "MME",
+                            "entity": null,
+                            "dimensions": [
+                                {
+                                    "name": "NodeName",
+                                    "displayName": "NodeName",
+                                    "id": "NodeName"
+                                },
+                                {
+                                    "name": "SubElementID",
+                                    "displayName": "SubElementID",
+                                    "id": "SubElementID"
+                                }
+                            ],
+                            "context": null
+                        },
+                        "filter": {
+                            "condition": "OR",
+                            "rules": [
+                                {
+                                    "id": "SUM_117490518",
+                                    "value": "-2147483648",
+                                    "type": "bound"
+                                },
+                                {
+                                    "id": "SUM_117490521",
+                                    "value": "-2147483648",
+                                    "type": "bound"
+                                }
+                            ]
+                        },
+                        "samplingPeriod": null,
+                        "intervals": "Last 1 month",
+                        "pagination": {
+                            "pagenumber": 1,
+                            "pagesize": 10000,
+                            "pagingSpec": null
+                        },
+                        "granularity": "HOURLY",
+                        "reportDataType": "grouped",
+                        "filterMap": {
+                            "NodeName": "MME001BKTm"
+                        },
+                        "counterGroupsWithCounter": null,
+                        "counterGroupsWithKpi": null
+                    },
+                    "metrics": null,
+                    "kpiMetrics": null,
+                    "response": null,
+                    "userName": null,
+                    "reportName": "MME Report 5",
+                    "graphData": null
+                }
+           ]

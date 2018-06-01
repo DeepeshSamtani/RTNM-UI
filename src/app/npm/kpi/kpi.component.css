@@ -1,0 +1,184 @@
+.kpi-content {
+  height: 890px;
+  margin: 0px -20px;
+  background-color: #fff;
+}
+
+/* Styles for tab labels */
+
+.mat-tab-label {
+  font-family: 'Roboto Condensed', sans-serif, Arial;
+  font-size: 13px;
+  color: #192239;
+  opacity: 1;
+}
+
+/* Styles for the active tab label */
+
+.mat-tab-label.mat-tab-label-active {
+  font-family: 'Roboto Condensed', sans-serif, Arial;
+  font-size: 13px;
+  color: #192239;
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* Styles for the ink bar */
+
+.mat-ink-bar {
+  background-color: #d63181 !important;
+}
+
+/* Styles for form field */
+
+.kpi-form-field {
+  font-family: 'Roboto Condensed', sans-serif, Arial;
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: 490;
+  opacity: 1;
+}
+
+.mat-input-underline {
+  background-color: #666666;
+}
+
+.kpi-table-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px !important;
+  width: 100% !important;
+  min-width: 300px;
+}
+
+mat-table {
+  overflow: auto !important;
+  max-height: 500px !important;
+  font-family: 'Roboto Condensed', sans-serif, Arial !important;
+}
+
+mat-header-cell {
+  color: #d63181 !important;
+  font-size: 14px !important;
+  font-weight: bold;
+}
+
+mat-cell {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+mat-cell:hover {
+  white-space: normal !important;
+  overflow: auto !important;
+  text-overflow: initial !important;
+}
+
+button {
+  color: #ffffff;
+  background-color: #05b7e3;
+  background: linear-gradient(to bottom, #00aad4 0%, #05c0ee 100%);
+  border-color: transparent;
+  border-radius: 0;
+}
+
+button:disabled {
+  color: #aaa !important;
+  background-color: #DDDDDD !important;
+  background: #DDD;
+}
+
+.mat-form-field-placeholder:active {
+  color: #2e2e2e !important;
+}
+
+.table-action {
+  margin: 0px 15px;
+  font-size: 18px;
+}
+
+.kpi-tab-content {
+  font-family: 'Roboto Condensed', sans-serif, Arial;
+  padding: 15px;
+}
+
+.main-kpi-form-container {
+  height: 750px;
+  border: 1px solid #AAA;
+}
+
+.kpi-header {
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #192239;
+}
+
+.numkey {
+  min-width: 30px !important;
+  border: 1px solid #d63181 !important;
+  margin: 3px !important;
+  font-size: 16px !important;
+  color: #d63181 !important;
+}
+
+.numkey:disabled {
+  border: 1px solid #AAA !important;
+  color: #AAA !important;
+}
+
+.formula-error {
+  text-decoration: none;
+  font-size: 14px;
+  color: Red;
+  margin-left: 30px;
+  float: right;
+}
+
+.token {
+  display: inline-block;
+  border: 1px dashed #6400AA;
+  padding: 5px 10px;
+  min-width: 50px;
+  margin: 5px;
+  text-align: center;
+}
+
+.rm-col-padding {
+  padding: 0px;
+}
+
+.selected-counter {
+  border: 1px dashed #888 !important;
+  margin: 5px !important;
+}
+
+.cg-list-item {
+  font-size: 14px !important;
+  cursor: default;
+}
+
+.cg-list-item:hover,
+.cg-list-item.active {
+  background-color: #FFF;
+  color: #d63181;
+}
+
+button {
+  font-family: 'Roboto Condensed', sans-serif, Arial !important;
+  font-size: 16px !important;
+}
+
+.no-content-text {
+  height: 200px;
+  margin-top: 60px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif, Arial !important;
+  color: #444;
+}

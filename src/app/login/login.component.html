@@ -1,0 +1,36 @@
+<div id="bg"> </div>
+<div class="pagewarp">
+  <div id="login-titile"> <img src="./assets/images/harman-footer.png" alt=""></div>
+  <div class="form-cont">
+    <div class="custom-form">
+      <form class="form-horizontal" novalidate [formGroup]="loginForm" (keyup.enter)="signIn()">
+        <div class="form-group row adj-space">
+          <div class="col-md-12">
+
+            <input type="text" class="form-control form-control-no dropdown " formControlName="userName" required [ngClass]="commonFieldErrorUtilService.displayFieldCss('userName')">
+            <span class="bar"></span>
+            <label>Username</label>
+            <app-field-error-display [displayError]="!userName.valid && (userName.dirty || userName.touched )" [errorMsg]="'Please enter valid userName.'"></app-field-error-display>
+          </div>
+
+        </div>
+        <div class="form-group row adj-space">
+          <div class="col-md-12">
+
+            <input type="password" class="form-control form-control-no dropdown " formControlName="password" required [ngClass]="commonFieldErrorUtilService.displayFieldCss('password')">
+            <span class="bar"></span>
+            <label>Password</label>
+            <app-field-error-display [displayError]="!password.valid && (password.dirty || password.touched )" [errorMsg]="'Please enter valid password.'"></app-field-error-display>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+    <button type="submit" id="signIn" (click)="signIn()" [class.disabled]="buttonDisabled" class="btn login-btn">
+      Submit
+        <i style="color:#fff;margin-top:2px;display:none;" class="pull-right fa fa-spinner fa-pulse fa-1x "></i></button>
+  </div>
+
+</div>
+

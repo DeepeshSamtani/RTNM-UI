@@ -1,0 +1,90 @@
+
+<div class="fixed-breadcrumb row">           
+   <!-- <a class="ee-logo"><img src="./assets/images/ee-logo.png"  alt=""></a> -->
+    <div class="page-title">
+    <h2 class="single-line">My Reports</h2>
+    </div>
+    
+  </div>
+
+  <div class="container-fluid page-container">
+    <div *ngIf="isLoading">
+                <!--<mat-spinner style="margin:auto;" diameter=60 color="accent"></mat-spinner>-->
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+              </div>
+      <div class="main-container tab-container">
+          <div class="tab-content">
+      <div class="row">
+            <div class="col-md-12 form-top">
+              <div class="pull-left">
+                <h3 class="block-title">My Reports</h3>
+              </div>
+
+              <div class="pull-right action-item">
+                  <div class="serach-category sm">
+                      <input type="text" class="search-query" placeholder="Search" [(ngModel)]="searchCG">
+                      <button type="submit" class="search-btn">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                  <!--a title="View all" style="cursor:pointer;" (click)="getSpecificSubDashboard(subDashboard)" class="icon-16 more-icon"></a-->
+                  </div>
+            </div>
+        
+   
+   <div class="col-md-12">
+   <ul class="row report-icon my-report">
+      <li class="col-md-2 create-new">
+        <a title="Create New" [routerLink]="'/report/createReport'">
+          <span class="glyphicon glyphicon-plus"></span>
+          <span class="txt">Create New</span>
+        </a>
+      </li>
+            <li class="col-md-2" *ngFor="let report of reports| searchpipe :searchCG:['reportName'];let i=index;" >
+               <a [attr.href]="'#confirmBox'" (click)="setDeleteReport(report,i)" data-toggle="modal"><span class="reprot-delete" title="Remove">
+                <i class="icon-16 icon-delete" ></i>
+              </span></a> 
+              <a (click)="getSpecificReport(report)">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='pie'" src="./assets/images/pie-chart2.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='Vertical Bar' ||report.reportConfiguration.configuration.subType=='Bar' " src="./assets/images/vertical-bar.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='Spline'" src="./assets/images/spline-graph.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='donut'" src="./assets/images/donut-chart.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='Vertical Stacked Bar'" src="./assets/images/vertical-stacked-bar6.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='Horizontal Bar'" src="./assets/images/horizontal-bar4.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='line'" src="./assets/images/line-chart.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='Horizontal Stacked Bar'" src="./assets/images/horizontal-stacked-bar2.png"  alt="">
+                <img *ngIf="report.reportConfiguration.configuration.subType=='areaspline'" src="./assets/images/line-chart.png"  alt="">
+                 <img *ngIf="report.reportConfiguration.configuration.subType=='Table'" src="./assets/images/table-table.png"  alt="">
+
+               
+              </a>
+              <span  class="lbl">{{report.reportName}}</span>
+            </li>
+      
+          </ul>
+   </div>
+  
+
+ </div>
+</div>
+ </div>
+</div>
+<div class="modal fade" id="confirmBox" style="top:100px;">
+  <div class="modal-dialog small-dailog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Delete Report
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">Do you want to delete the report ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="deleteReportConf={};">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)=" deleteReport()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

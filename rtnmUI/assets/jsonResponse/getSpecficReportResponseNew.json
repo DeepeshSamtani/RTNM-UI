@@ -1,0 +1,2645 @@
+
+
+
+{
+    "userTemplateId": null,
+    "reportConfiguration": {
+        "configuration": {
+            "attributes": null,
+            "properties": null,
+            "metrics": [
+                {
+                    "id": "EPC_C_1",
+                    "aggregationType": "SUM"
+                },
+                {
+                    "id": "EPC_C_12",
+                   "aggregationType": "SUM"
+                }
+            ],
+            "kpiMetrics": null,
+            "name": null,
+            "type": "Table",
+            "subType": "Table",
+            "deviceType": "MME",
+            "entity": null,
+            "dimensions": [
+                {
+                    "name": "WHOLE_SYSTEM",
+                    "displayName": "WHOLE_SYSTEM",
+                    "id": "EPC_P_2"
+                },
+                {
+                    "name": null,
+                    "displayName": "COUNTER_GROUP_ID",
+                    "id": "COUNTER_GROUP_ID"
+                }
+            ],
+            "context": null,
+            "groupByDimensions": null
+        },
+        "filter": {
+            "condition": "AND",
+            "rules": [
+                {
+                    "condition": "OR",
+                    "rules": [
+                        {
+                            "field": "COUNTER_GROUP_ID",
+                            "value": "EPC_CG_10",
+                            "type": "selector"
+                        }
+                    ]
+                },
+                {
+                    "condition": "OR",
+                    "rules": [
+                        {
+                            "id": "EPC_C_1",
+                            "value": "-2147483648",
+                            "type": "bound"
+                        },
+                        {
+                            "id": "EPC_C_12",
+                            "value": "-2147483648",
+                            "type": "bound"
+                        }
+                    ]
+                }
+            ]
+        },
+        "samplingPeriod": null,
+        "intervals": "Last 12 hours",
+        "pagination": {
+            "pagenumber": 1,
+            "pagesize": 10000,
+            "pagingSpec": {
+                "pagingIdentifiers": null,
+                "threshold": 10000
+            }
+        },
+        "granularity": "ALL",
+        "reportDataType": "raw",
+        "filterMap": {},
+        "counterGroupsWithCounterAndProperties": [
+            {
+                "counterGroupId": "EPC_CG_10",
+                "counterGroupDetails": null,
+                "deviceType": null,
+                "neLevel": null,
+                "cgSource": null,
+                "counterList": [
+                    {
+                        "counterKey": {
+                            "counterId": "EPC_C_1",
+                            "counterGroupTrans": null
+                        },
+                        "counterUnit": "times",
+                        "counterDescription": null,
+                        "aggregation": null,
+                        "counterType": "Counter",
+                        "enabled": null,
+                        "cSource": null,
+                        "aggregationList": null,
+                        "displayName": "Ir S1 bsd HO Req SGW not Chg"
+                    },
+                    {
+                        "counterKey": {
+                            "counterId": "EPC_C_12",
+                            "counterGroupTrans": null
+                        },
+                        "counterUnit": "times",
+                        "counterDescription": null,
+                        "aggregation": null,
+                        "counterType": "Counter",
+                        "enabled": null,
+                        "cSource": null,
+                        "aggregationList": null,
+                        "displayName": "Ir bsd source Forward reLoc"
+                    }
+                ],
+                "properties": [
+                    {
+                        "propertyKey": {
+                            "propertyId": "EPC_P_2",
+                            "counterGroups": {
+                                "counterGroupId": "EPC_CG_10",
+                                "counterGroupDetails": null,
+                                "deviceType": null,
+                                "neLevel": null,
+                                "cgSource": null,
+                                "counterList": null,
+                                "properties": null,
+                                "kpis": null,
+                                "displayName": null
+                            }
+                        },
+                        "propertyName": "WHOLE_SYSTEM",
+                        "propertyValues": "null"
+                    }
+                ],
+                "kpis": null,
+                "displayName": "HWI_MME_S1IRMMEHO"
+            }
+        ],
+        "counterGroupsWithKpi": null
+    },
+    "metrics": [
+        {
+            "counterKey": {
+                "counterId": "EPC_C_1",
+                "counterGroupTrans": {
+                    "counterGroupId": "EPC_CG_10",
+                    "counterGroupDetails": null,
+                    "deviceType": null,
+                    "neLevel": null,
+                    "cgSource": null,
+                    "counterList": null,
+                    "properties": null,
+                    "kpis": null,
+                    "displayName": null
+                }
+            },
+            "counterUnit": "times",
+            "counterDescription": "Inter S1-based handover request Times  SGW not change",
+            "aggregation": {
+                "id": 4,
+                "hourSum": 1,
+                "hourMin": 0,
+                "hourMax": 0,
+                "hourAvg": 0,
+                "hourFormula": null,
+                "daySum": 1,
+                "dayMin": 0,
+                "dayMax": 0,
+                "dayAvg": 0,
+                "dayFormula": null,
+                "weekSum": 1,
+                "weekMin": 0,
+                "weekMax": 0,
+                "weekAvg": 0,
+                "weekFormula": null,
+                "monthSum": 1,
+                "monthMin": 0,
+                "monthMax": 0,
+                "monthAvg": 0,
+                "monthFormula": null,
+                "yearSum": 1,
+                "yearMin": 0,
+                "yearMax": 0,
+                "yearAvg": 0,
+                "yearFormula": null
+            },
+            "counterType": "Counter",
+            "enabled": 1,
+            "cSource": "117491612",
+            "aggregationList": [],
+            "displayName": "Ir S1 bsd HO Req SGW not Chg"
+        },
+        {
+            "counterKey": {
+                "counterId": "EPC_C_12",
+                "counterGroupTrans": {
+                    "counterGroupId": "EPC_CG_10",
+                    "counterGroupDetails": null,
+                    "deviceType": null,
+                    "neLevel": null,
+                    "cgSource": null,
+                    "counterList": null,
+                    "properties": null,
+                    "kpis": null,
+                    "displayName": null
+                }
+            },
+            "counterUnit": "times",
+            "counterDescription": "Inter-MME S1-based handover failure times at source MME   Forward relocation complete notification timed out",
+            "aggregation": {
+                "id": 4,
+                "hourSum": 1,
+                "hourMin": 0,
+                "hourMax": 0,
+                "hourAvg": 0,
+                "hourFormula": null,
+                "daySum": 1,
+                "dayMin": 0,
+                "dayMax": 0,
+                "dayAvg": 0,
+                "dayFormula": null,
+                "weekSum": 1,
+                "weekMin": 0,
+                "weekMax": 0,
+                "weekAvg": 0,
+                "weekFormula": null,
+                "monthSum": 1,
+                "monthMin": 0,
+                "monthMax": 0,
+                "monthAvg": 0,
+                "monthFormula": null,
+                "yearSum": 1,
+                "yearMin": 0,
+                "yearMax": 0,
+                "yearAvg": 0,
+                "yearFormula": null
+            },
+            "counterType": "Counter",
+            "enabled": 1,
+            "cSource": "117491623",
+            "aggregationList": [],
+            "displayName": "Ir bsd source Forward reLoc"
+        }
+    ],
+    "kpiMetrics": null,
+    "response": [
+        {
+            "events": [
+                {
+                    "EPC_C_12__EPC_CG_10": 2487563,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 2177804,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 408988,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 3401055,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1277077,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 696070,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3166009,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 2377052,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3899455,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 2540380,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2531562,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 3604199,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2205810,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 4447083,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1266748,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 1151265,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 65681,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 1926697,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1306515,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 699431,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2610841,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 23159,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1483978,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 1464370,
+                   "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3502177,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 799723,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1867453,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 3611426,
+                    "timestamp": "2018-01-16T08:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1403222,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 1275347,
+                    "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1753182,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 3500954,
+                    "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3533928,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 4226581,
+                    "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 202287,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 2472563,
+                    "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1857245,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 3430222,
+                    "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1538442,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 709992,
+                   "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4613959,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 4610404,
+                    "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 14899,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 2641149,
+                    "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 819032,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 3346740,
+                    "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1591976,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 1317658,
+                    "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1701928,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 1571588,
+                    "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 556420,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 3547401,
+                    "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4367548,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 163528,
+                    "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1420445,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 3640381,
+                   "timestamp": "2018-01-16T07:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1195386,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 286301,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 40007,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 283467,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1632327,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 1512422,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1849471,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 1249077,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3159405,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 1887947,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3399008,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 2572405,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 252375,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 1943439,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2101953,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 2970768,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4970532,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 1474751,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3656999,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 3378611,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4659366,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 1472305,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 429142,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 3562712,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1359096,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 2483,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 472722,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 3441088,
+                    "timestamp": "2018-01-16T07:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2330327,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 517745,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 523427,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 111893,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3324388,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 3765925,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 619797,
+                    "WHOLE_SYSTEM": "MME002WV",
+                   "EPC_C_1__EPC_CG_10": 4516296,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4526225,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 3199363,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2392999,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 3297441,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4935551,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 1059191,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3048101,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 3015314,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 470738,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 1323510,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 619512,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 4826438,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 734251,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 4676628,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4999882,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 4602051,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1109942,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 705655,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3872545,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 4512527,
+                    "timestamp": "2018-01-16T07:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4737116,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 4752069,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2388133,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 2242216,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3794939,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 4202453,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2628225,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 3344483,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1423028,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 3114826,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1258888,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 422900,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 304675,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 804392,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3418071,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 2846617,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2548890,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 987242,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1471985,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 3888472,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4324060,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 3219746,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4199269,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 1859753,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 870637,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 4967418,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2201694,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 2702284,
+                    "timestamp": "2018-01-16T07:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3315529,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 4327778,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1897551,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 3707755,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3211565,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 371373,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2808433,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 1669756,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4806095,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 2930730,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1352620,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 4056739,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2926355,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 2346962,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2893540,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 4044535,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1895898,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 1443993,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1327965,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 3002900,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3313779,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 4282948,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1959891,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 4348685,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4542417,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 1969534,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3680055,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 2481462,
+                    "timestamp": "2018-01-16T06:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4799364,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 1764616,
+                    "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2072222,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 3158644,
+                    "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1681605,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 308000,
+                    "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 702278,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 2717812,
+                    "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 695721,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 1425183,
+                    "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3169464,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 4123514,
+                   "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2933513,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 665670,
+                    "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2317878,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 2037070,
+                    "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 397027,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 3412185,
+                    "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4983273,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 476118,
+                   "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 826417,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 4713005,
+                    "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 497451,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 2061846,
+                    "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2396719,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 2337553,
+                    "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3657135,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 1882407,
+                    "timestamp": "2018-01-16T06:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2048414,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 3900454,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3541805,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 2022613,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2744607,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 4609265,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4942323,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 2306935,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4926038,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 3733901,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2497955,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 2127940,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 204532,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 3399796,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3750430,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 276902,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4533242,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 2581,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1706757,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 925233,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 331933,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 3072861,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4880685,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 4271400,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3425517,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 1301758,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 998258,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 1627661,
+                    "timestamp": "2018-01-16T06:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1345949,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 1144762,
+                    "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 174386,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 4120887,
+                    "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1308133,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 4359045,
+                    "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 844850,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 834279,
+                    "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1630017,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 1076721,
+                    "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1100932,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 1891560,
+                    "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4336776,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 76369,
+                   "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3891909,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 78411,
+                    "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3408881,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 3992527,
+                    "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2759683,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 62274,
+                    "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1671667,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 1961831,
+                   "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2274343,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 4144479,
+                    "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1173136,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 907103,
+                    "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 403472,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 1405954,
+                    "timestamp": "2018-01-16T06:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1487359,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 4444646,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1225653,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 4022804,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2053026,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 1685369,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2497952,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 896477,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2557734,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 3557170,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2662678,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 4017372,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4570262,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 1353603,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4017641,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 3380764,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3808064,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 938407,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2703700,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 2398964,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2266318,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 1518270,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 645575,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 1714639,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3170964,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 3288534,
+                    "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 292989,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 2653780,
+                   "timestamp": "2018-01-16T05:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2029900,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 4842505,
+                    "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4292947,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 526721,
+                    "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2565894,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 2489928,
+                    "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 786782,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 1384201,
+                   "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4788059,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 3545575,
+                    "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1537045,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 1560723,
+                    "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3409989,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 3685129,
+                    "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 40855,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 3389909,
+                   "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2372913,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 2767853,
+                    "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4613904,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 992624,
+                    "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4861097,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 2587627,
+                    "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 410163,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 1293776,
+                   "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1549905,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 693895,
+                    "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2054343,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 4992321,
+                    "timestamp": "2018-01-16T05:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2477898,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 77623,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3532834,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 1499933,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1545644,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 3718841,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2632293,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 2840408,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3503978,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 3984845,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3147592,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 4629025,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2648201,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 388258,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3491573,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 3352394,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4226854,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 4705088,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4645691,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 3265003,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3437441,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 4954262,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3425186,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 3016345,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 672713,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 732322,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 884603,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 510437,
+                    "timestamp": "2018-01-16T05:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4247198,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 2978231,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3111130,
+                    "WHOLE_SYSTEM": "MME002WV",
+                   "EPC_C_1__EPC_CG_10": 211880,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1692947,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 2602319,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3872323,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 4907515,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1814316,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 564718,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1006670,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 2290610,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2452511,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 1915476,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 816791,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 3284636,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4936356,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 4527256,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 348664,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 4196889,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2617734,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 857223,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4238029,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 3946756,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2748390,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 4959395,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1860052,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 3183259,
+                    "timestamp": "2018-01-16T05:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3134167,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 4883112,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2733161,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 2042548,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 482128,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 2110115,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 863576,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 2143241,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1852886,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 4493898,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1435834,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 158882,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 540227,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 4267236,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 135190,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 1272224,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 152186,
+                    "WHOLE_SYSTEM": "MME002WV",
+                   "EPC_C_1__EPC_CG_10": 2452745,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4889224,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 4110746,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 335872,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 4666695,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 104601,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 3529465,
+                   "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4448519,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 717507,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 549575,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 3346678,
+                    "timestamp": "2018-01-16T04:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3375069,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 4175371,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4683832,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 2791475,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1020790,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 3266818,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 625736,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 2711987,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1606025,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 1010300,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3133173,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 102669,
+                   "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3955284,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 4798685,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2085850,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 1274932,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1257326,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 1780365,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1757301,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 1851992,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3779401,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 3453668,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 872638,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 2582419,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2552773,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 3525395,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 695792,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 814357,
+                    "timestamp": "2018-01-16T04:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4288740,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 1591010,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3959855,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 4173012,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3455805,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 147079,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2011237,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 3992958,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3115313,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 28559,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3098982,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 2284105,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2745389,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 3937917,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3336347,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 3108427,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4952177,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 3674734,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 915168,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 3075577,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4060228,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 3057988,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1025624,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 2247966,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4180315,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 3162339,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1655588,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 2361575,
+                    "timestamp": "2018-01-16T04:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3188523,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 4313425,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4411505,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 3697399,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3113277,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 4991049,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1402701,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 1396798,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2290602,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 4844944,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1472855,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 2425942,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 882027,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 506065,
+                   "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3953671,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 681791,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4147121,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 2701829,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3050595,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 3468447,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2280190,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 897236,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 447693,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 3178491,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4514673,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 4796582,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2203519,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 3820282,
+                    "timestamp": "2018-01-16T04:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 565611,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 283587,
+                   "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4061794,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 3658526,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2585691,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 3659731,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2917791,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 517424,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3756040,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 4871356,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1552410,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 1596374,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 127836,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 2776566,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3114982,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 4336835,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3215398,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 1917458,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1162323,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 3934152,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3666105,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 1431258,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4709632,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 1029879,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2404116,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 1538785,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2302722,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 610027,
+                    "timestamp": "2018-01-16T03:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 936086,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 2933260,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4097598,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 2884881,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2414682,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 2744714,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3822288,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 2336931,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2248490,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 393509,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4094797,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 2394355,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4918892,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 3498950,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2327877,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 745478,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 436061,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 3616365,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 998802,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 371749,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4128016,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 1567248,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4518381,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 3878588,
+                   "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4051258,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 728350,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 419841,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 4194246,
+                    "timestamp": "2018-01-16T03:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1837657,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 2395869,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4091737,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 3946701,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3102016,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 2532334,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2007110,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 2221262,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3943466,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 1169432,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3499862,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 648824,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4889739,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 3836403,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3016903,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 1660617,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4546875,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 4796398,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4653163,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 1147080,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3948145,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 3357215,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4944388,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 247649,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 233272,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 4483454,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3419561,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 3123612,
+                    "timestamp": "2018-01-16T03:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2271779,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 482141,
+                   "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 648589,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 2317400,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4578943,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 79068,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 286725,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 767512,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1012455,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 3454074,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1180384,
+                    "WHOLE_SYSTEM": "MME002LT",
+                   "EPC_C_1__EPC_CG_10": 4871544,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3740429,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 2950154,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2731068,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 3151340,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4140162,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 853481,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2444430,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 3848607,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1523921,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 2247739,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1738798,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 2009021,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3967359,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 4914937,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2885460,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 1648665,
+                    "timestamp": "2018-01-16T03:10:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4919386,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 4843727,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 728376,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 1902274,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4318060,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 3343766,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4122213,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 3242383,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4254913,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 1058820,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4274395,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 1043540,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1242133,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 3686588,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3810130,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 2535182,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4028774,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 4630477,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 595904,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 526354,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4424627,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 2135124,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4594100,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 3724613,
+                   "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 306053,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 945250,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3397407,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 1454059,
+                    "timestamp": "2018-01-16T02:55:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1209681,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 1115586,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1495265,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 1294834,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3896716,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 1584637,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3128712,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 4309898,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1544298,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 2915988,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1313414,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 3305279,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 966591,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 1724386,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3476132,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 4346748,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2480135,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 141018,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1233730,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 1677454,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2595977,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 4092766,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1242835,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 2515737,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 621437,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 4663467,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3665652,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 1884360,
+                    "timestamp": "2018-01-16T02:40:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1828580,
+                    "WHOLE_SYSTEM": "MME001PR",
+                    "EPC_C_1__EPC_CG_10": 4837025,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 712798,
+                    "WHOLE_SYSTEM": "MME002LT",
+                    "EPC_C_1__EPC_CG_10": 1552409,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3245487,
+                    "WHOLE_SYSTEM": "MME001EN",
+                    "EPC_C_1__EPC_CG_10": 300089,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3569994,
+                    "WHOLE_SYSTEM": "MME001WV",
+                    "EPC_C_1__EPC_CG_10": 1325528,
+                   "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4967490,
+                    "WHOLE_SYSTEM": "MME002WV",
+                    "EPC_C_1__EPC_CG_10": 2545514,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3241061,
+                    "WHOLE_SYSTEM": "MME002MF",
+                    "EPC_C_1__EPC_CG_10": 1536276,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2970707,
+                    "WHOLE_SYSTEM": "MME002LD",
+                    "EPC_C_1__EPC_CG_10": 4233913,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 1833931,
+                    "WHOLE_SYSTEM": "MME002CR",
+                    "EPC_C_1__EPC_CG_10": 3131318,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3031572,
+                    "WHOLE_SYSTEM": "MME001MF",
+                    "EPC_C_1__EPC_CG_10": 183618,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3302813,
+                    "WHOLE_SYSTEM": "MME001BK",
+                    "EPC_C_1__EPC_CG_10": 4792995,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2816053,
+                    "WHOLE_SYSTEM": "MME002BK",
+                    "EPC_C_1__EPC_CG_10": 2562641,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 4416023,
+                    "WHOLE_SYSTEM": "MME001CR",
+                    "EPC_C_1__EPC_CG_10": 4262745,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 2117359,
+                    "WHOLE_SYSTEM": "MME001LT",
+                    "EPC_C_1__EPC_CG_10": 757633,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                },
+                {
+                    "EPC_C_12__EPC_CG_10": 3240412,
+                    "WHOLE_SYSTEM": "MME001LD",
+                    "EPC_C_1__EPC_CG_10": 4436500,
+                    "timestamp": "2018-01-16T02:25:00.000Z",
+                    "COUNTER_GROUP_ID": "HWI_MME_S1IRMMEHO"
+                }
+            ]
+        }
+    ],
+    "userName": null,
+    "reportName": null,
+    "graphData": null,
+    "header": [
+        {
+            "id": "timestamp",
+            "displayName": "Timestamp",
+            "value": "text",
+            "children": null
+        },
+        {
+            "id": "COUNTER_GROUP_ID",
+            "displayName": "Counter Group",
+            "value": "text",
+            "children": null
+        },
+        {
+            "id": "WHOLE_SYSTEM",
+            "displayName": "WHOLE_SYSTEM",
+            "value": "text",
+            "children": null
+        },
+        {
+            "id": "EPC_C_1__EPC_CG_10",
+            "displayName": "Ir S1 bsd HO Req SGW not Chg",
+            "value": "number",
+            "children": null
+        },
+        {
+            "id": "EPC_C_12__EPC_CG_10",
+            "displayName": "Ir bsd source Forward reLoc",
+            "value": "number",
+            "children": null
+        }
+    ]
+}
